@@ -1,0 +1,80 @@
+Navegação básica
+
+códigos do CMD
+
+- cd nome - navegação entre as pastas
+- cd / - vai para o diretório C
+- cd .. - volta na pasta anterior
+- dir - pastas no diratório selecionado (sempre usar o dir para abrir as pastas, após a navegação)
+- cls - limpeza do cmd
+- TAB - auto completa as palavras
+- mkdir nome - criar pastas
+- echo nome > nome.txt - criar aquivo na pasta desejada
+- del nome - deleta os arquivos da pasta selecionada
+- rmdir nome /S /Q - deleta a pasta desejada, o que possui dentro e sem pedir permissão
+
+
+SHA 1 - Secure Hash Algorithm
+
+faz a encriptação de arquivos desejados
+forma culta de representar um arquivo
+- echo nome | openssl sha1 - faz o conjunto de 40 caracteres que representa o dado informado
+forma que o GIT faz o armazenamento interno de informações
+
+blob: encriptação do arquivo (SHA1 do arquivo)
+- echo 'conteudo' | git hasj-object --stdin
+- echo -e 'blob 9\0conteudo' | openssl sha1
+Tree: armazenamento dos arquivos (SHA1 da arvore)
+Commit: aponta para uma arvore, parente e autor
+cada um possui sua propria incriptação!
+
+
+CHAVE SSH - estabeler conexão segura entre duas máquina para upload do código no github
+ssh-keygen -t ed25519 -C byeloliveria@gmail.com
+eval $(ssh-agent -s)
+
+
+GIT
+
+- CTRL + L - limpa o espaço
+- ls - lista os arquivos na pasta
+- ls -a - mostra arquivos ocultos na pasta
+- cd nome - entra na pasta desejada
+- mkdir nome - criar pastas
+- git init - inicializa o código da pasta, cria um repositório
+- git add * - adiciona todos os arquivos do depositório local para a stage area
+- git commit -m "mensagem"
+- git config --global user.email "byeloliveira@gmail.com"
+- git config --global user.name GabAssuncao
+- git status (modo atual dos arquivos)
+- mv nome ./receitas/ (mover o arquivo para a pasta desejada)
+- echo > nome e tipo de arquivo (criar aquivo)
+- git config --list (lista das configurações registradas no git, email, nome, etc)
+- git config --global --unset user.email (retira o email)
+
+ENVIAR AQUIVOS DO GIT PARA O GITHUB
+- git remote add origin https://github.com/GabAssuncao/livro-receitas.git
+- git remote -v (identificação do repositório remoto)
+- git add * (inclusão dos arquivos modificados)
+- git commit -m "alteração realizada"
+- git push origin master
+
+PUXAR AQUIVOS DO GITHUB PARA O GIT
+- git pull origin master (puxa do seu próprio depositório)
+- git clone link (clona o arquivo de outro repositório)
+
+
+MARKDOWN
+
+# título - quantidade de # define o tamanho da fonte do título
+**palavra** - deixa em negrito
+_palavra_ - deixa em italico
+ - (crima uma lista com bolinhas)
+
+
+
+
+
+
+
+

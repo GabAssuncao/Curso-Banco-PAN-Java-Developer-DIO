@@ -1,0 +1,124 @@
+INTRODUÇÃO À CULTURA ÁGIL
+
+MANIFESTO ÁGIL - documento criado por 17 profissionais da área, essencia do pensamento ágil que uni todas as metodologias:
+
+Valores:
+
+* individuos e interações - mais que processos e ferramentas
+* software em funcionamento - mais que documentação abrangente
+* responder a mudanças - mais que seguir um plano
+* colaboração com o cliente - mais que negociação de contratos
+
+Os 12 princípios do MANIFESTO:
+
+1 - satisfazer o cliente através da entrega contínua e adiantada de software com valor agregado.;
+2 - Aceitar mudanças;
+? -
+6 - comunicação com a equipe (face a face).
+? - 
+10 - simplicidade: focar no essencial.
+? - 
+12 - Reflexão sobre como se tornar mais eficaz e agir de acordo.
+
+Importância da agilidade no mundo da tecnologia!
+
+Inovação / Entregas rápidas / Eficiência
+
+V olátil 
+U incerto (ingês)
+C omplexo
+A mbíguo
+
+GERENCIAMENTO DE PROJETOS
+
+	 { é recorrente e continui
+Processo { replicavel
+	 { repetitivo e realizado regularmente
+
+	 { esforço temporario para atingir um objetivo
+Projeto  { resultado exclusivo
+	 { inicio e fim definidos
+
+TIPOS DE PROJETOS	
+
+Waterfall (tradicional)		x	SCRUM (ágil)
+
+Planejamento inicial			Planejamento em sprints, etapas, 
+seguido até o final			com feedback constante ao cliente
+
+GESTÃO ÁGIL É:
+
+flexivel, colaborativa, voltada ao aprendizado e melhoria continua, entrega contniua de valor!
+
+MÉTODOS E FERRAMENTAS ÁGEIS:
+
+* framework scrum - é um framework leve que ajuda pessoas, times e organizações a gerar valor por meio de soluções adaptativas para problemas complexos.
+tomada de decisões com base: empirismo (observação) e Lean Thinking (redução de desperdício)
+pilares: transparência (observado por qualquer pessoa), inspeção (visão crítica) e adaptação (melhorias).
+
+* extreme programming (XP) - criar sistemas com alta qualidade com base em interação proxima com cliente, testagem constante e ciclos de desenvolvimento.
+ciclos de entregas rápidas, cotinuos e incrementais
+programação em pares
+
+* kanban - ferramenta de gestão de tarefas
+três colunas: a fazer, fazendo e feito
+
+* OKR - encarar os chamados principais objetivos estrategicos de ume empresa.
+Objetivos: descrições qualitativas que apontem a direção
+- claros
+- inspirador
+- desafiador
+- alinhado com a missão do negócio
+EX: experiência inesquecível para o cliente, crescer as vendas, referência nacionar, etc.
+Key Results = metas que determinam o atingimento do objetivo (progresso), quantitativas, indicadores, especifica, mensuravel, atingivel, relevante e temporal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,344 @@
+
+Habilidades cmoplementares para a codificação
+
+Raciocínio lógico > pensamento estruturado que permite encontrar a solução de um problema.
+Exige treinamento, tornando cada vez mais intuitivo.
+
+Indução: fenômeno observado - leis e teorias (induz que algo acontece a partir de observação).
+Dedução: através de leis e teorias deduz previsões e explicações (algebra).
+Abdução a partir de uma conclusão tira-se uma premissa, observa para supor (grama esta molhada, logo choveu) - processo investigativo, diagnósticos.
+
+		       Abdução
+	    Sintética{
+Inferência{	       Analítica
+	    Analítica - Dedução
+
+Aperfeiçoamento > a partir de uma solução determina pontos de melhoramento
+
+Encontrar solução eficiente} Melhor uso de recursos
+Otimizar processos}
+
+Simplificar linhas de códigos} Melhora códigos e algoritimos
+Funções bem definidas}
+
+
+DECOMPOSIÇÃO
+
+Um problema complexo você divide, segmenta, em etapas menores mais fáceis de gerenciar
+Posteriormente recompor da forma original de maneira que faça sentido e resolva o problema
+Maneiras distintas de decompor o mesmo problema
+Facilita o encontro de problemas, de forma que a solução possa ser aplicada em apenas 1 ponto.
+
+
+RECONHECIMENTO DE PADRÕES
+
+* Modelo Base
+* Estrutura invariante
+* Repetição
+
+Todas as imagens passam por processo de compressão para serem salvas no servidor - processo de armazenamento padrão de todas as plataformas.
+Compressão de dados através de reconhecimento de padrões = 3 campos azuis, 2 verdes, 1 amarelo, 2 pretos, 1 amarelo
+								az|az|az|vd|vd|am|pr|pr|am
+Divisão de animais, frutas, plantas, etc.
+Por quê? Vantagens de generalizar com o objetivo de obter resoluções de problemas diferentes.
+O reconhecimento é feito através do grau de similaridade (grupos conhecidos x objeto desconhecido) - Pelas características eu reconheço que algo novo é um inseto
+Representar os atributos para que a máquina possa reconhecer através de um conceito associado em qual conceito ele se encaixa.
+Ex: classificação de dados, reconhecimento de imagem, reconhecimento de fala, análise de cenas, classificação de documentos, redes neurais, inteligência artifical, machine learning, etc.
+
+
+ABSTRAÇÃO
+
+Abstrair - observar as características (1 ou mais elementos avaliando as características ou dados em separado.)
+Abstração - trazer o objeto ao mundo das ideias.
+Generalizar - tornar algo geral, mais amplo, extenso.
+
+Classificar através de características, detectar os pontos essenciasi e generalizar x detalhar.
+
+
+ALGORITMOS
+
+Computador não opera sozinho, precisa de determinas instruções detalhadas para trabalhar, processar os dados.
+Instruções possuem o passo a passo do que o computador precisa realizar.
+O algoritmo precisa ser entendido tanto pelo humano quanto pela máquina.
+Descreve o problema por meio de ferramentas, narrativas, fluxograma ou pseudocódigos.
+Utiliza de linguagem de programação para codificar o algorítimo.
+
+Como construi um algoritmo?
+* compreenção do problema;
+* definição dos dados de entrada;
+* definir processamento;
+* definir dados de saída
+* utilizar um método de construção;
+* teste e diagnostico.
+
+Narrativa - utilização da linguagem natural (possui diversas interpretações possíveis;
+Fluxograma - estrutura grafica com simbolos pre definidos que definem o tipo de ação executada (simples entendimento e reconhecimento previo dos simbolos utilizados);
+Pseudocodigo - regras definidas, proximo de codificação, passos a serem seguidos.
+
+
+LÓGICA NA PROGRAMAÇÃO
+
+vem para solucionar um problema, uma questão, passível de numerosas soluções;
+forma de pensamento estruturada que te ajuda a determinar o que é verdadeiro ou não, ordenação coeza.
+organização e planejamento das intruções, assertivas em um algoritmo (passo a passo), a fim de viabilizar a implantação de um programa.
+
+Técnica Linear - execução sequenciada de uma seria de operações (sequencia de ações a serem executadas de maneira ordenada que possuem uma sequencia entre si), com recursos limitados de uma unica dimensão.
+
+Tecnica estruturada - escrita, entendimento, validação e manutenção (mais de uma opção);
+
+Tecnica modular - definimos partes independentes que são controladas por um conjunto de regras (dados de entrada - processo de transformação - dados de saída).
+
+
+FUNDAMENTOS DE ALGORITMOS
+
+Função do computador, processar as informações passadas a eles, sendo elas dados (manipulação e processamento) e instruções (informações de execução para processar dados).
+Númericos (inteiros e reais), caracteres (tudo aquilo que não é representado como número) e lógicos (verdadeiro 1 e falso 0).
+
+Variável 
+
+É uma estrutura mutável que pode variar dentro de seu valor e é inconstante, receber mais de 1 valor e modificar seu conteúdo (ligada ao seu tipo, ex: se for letra será letra).
+Variável pode ser um nome, documento (RG/CPF), nome de usuário, telefone, etc.
+possui um papel de ação ou controle (modifica ou controle).
+não muda
+resulta = recebido * 0.10
+instruções primitivas - determinam as ações a serem executadas em cima dos dados (calculos matematicos variaveis ou constantes) - operadores
+
++ manutenção de sinal - positivo
+- inversão de sinal - negativo
+seta para cima - exponenciação - operação binaria inteira ou real
+/ divisão - real
+div - inteiro
+* multiplicação - inteiro ou real
++ adição - inteiro ou real
+- subtração - inteiro ou real
+
+as intr4uções dentro de cada linguagem possui uma sintaxe particular!
+entrada, processamento e saída de dados de um algoritimo - são retirados de uma base de dados, processados e imprimidos.
+
+variaveis= nota 1 e nota 2
+
+(nota1 + nota2)/2 = ? - constante
+
+estrutura condicionada - simples, composta (exceção) ou encadeada (sucessão de estruturas)
+
+Operadores:
+
+= igual
+<> diferente
+> maior que
+< menor que
+>= maior ou igual
+<= menor ou igual
+
+Simples:
+
+Se (<condição>) então
+    <instruções para condição verdadeira>
+fim_se
+
+Composta: 
+
+Se (<condição>) então
+    <instruções para condição verdadeira>
+Senão
+    <instruções para condição falsa>
+fim_se
+
+Encadeado:
+
+Se (<condição1>) então
+    <instruções para condição verdadeira>
+Senão
+  Se (<condição2>) então
+    <instruções para condição 2 verdadeira e condição 1 falsa>
+  Senão
+    <instruções para condição 1 e 2 falsas>
+fim_se
+
+AND, OR, NOT - resposta simplificada, encadeamento de condições
+AND - junção de condições
+OR - uma condição ou outra
+NOT - necessáriamente apenas uma condição e não a outra
+
+
+ESTRUTURAS DE REPETIÇÃO
+
+repetição do trecho de um programa para execução
+redução de linhas, compreensão facilitada, redução de erro
+
+inicio: corta grama e analise se terminou
+
+grama = falso
+
+Enquanto (grama==falso) faça
+
+  <instrução de cortar grama>
+  <atualiza grama>
+
+fim enquanto
+
+repita: repetir até encontrar artigo
+
+somatorio = 0 
+
+para inicio = 1 até 10
+
+  somatorio = somatorio + iniio
+  escreva somatorio
+
+fim para
+
+Estruturas podem ser mescladas
+
+Enquanto (<condição>)
+
+  Se (<condição2>)
+      <instruções>
+  fimse
+
+  ...
+
+  fim enquanto
+
+
+VETORES E MATRIZES
+
+Vetor = sequencia de dados
+é caracterizado por uma variavel dimensionada com tamanho pre-fixado que ira receber n valores
+Matriz é uma tabela organizada no formato m x n, onde m é o número de linhas e n de colunas
+coleção de variaveis, contiguas em memoria e com indices
+nota 11
+nota 21 ] aluno 1
+
+nota 12
+nota 22 ] aluno 2
+
+a cada 2 posições temos a nota de 1 aluno
+
+vetor conjunto [1...8]<inteiro>
+vetor [15]
+vetor = []
+
+menor quantidade de linhas
+
+
+O QUE SÃO FUNÇÕES?
+
+subprograma, subalgoritimo, bloco, metodo, sub-rotina = função
+similar ao conceito de função matematica
+conectar um elemento de um conjunto a a um do conjunto b
+as funções são blocos de instruções que realizam tarefas específicas (trechos de códigos), identificados por nomes e parametros - decomposição do algoritmo para torná-lo mais legível
+modularização do programa - código mais claro e conciso, reutilização de instruções
+definição, nome, invocação e variável local (são destruidas ao encerrar a função)
+
+
+INSTRUÇÕES DE ENTRADA/SAÍDA
+
+conjunto de dados que o computador processa com o intuito de obter resultados
+entrada - consiste na inserção e recebimento de dados da vida real por meio de interfaces (teclado, mouse, metadados)
+saída - consiste na impressão dos dados do mundo digital por meio de ação de alguma interface, arquivos binarios a complexas querys de bancos de dados
+saida programada (condicional =aguarda o dispositivo / ou incondicional) e por interrupção (definida pelos perifericos)
+saidas podem ocasionar erros de sintaxe, de programação, com a interface, código...
+
+
+LINGUAGENS DE PROGRAMAÇÃO
+
+metodo pradonizado comporto por um conjunto de regras sintaticas e semanticas de implementação de um codigo fonte
+conjunto de palavras com regras
+codigo fonte que pode ser traduzido ou interpretado.
+
+
+COMO UM COMPUTADOR ENTENDE UM PROGRAMA?
+
+é um amontado de palavras se não for possível que o computador entenda
+tradução = compilação que executa a analise do programa e traduz em um programa objeto de baixo nivel
+tradução - gera programas menores
+interpretação - maior flexibilidade, executa diretamente porém é mais lenta
+
+
+CARACTERISTICAS DE UM PROGRAMA
+
+o desenvolvimento de programas possui diretrizes - legibilidade, redigibilidade, confiabilidade e custo
+Legibilidade - facilidade de leitura, coerencia das instruções, compreensão
+redigibilidade - simplicidade da escrita e expressivo
+confiabilidade - faz o que promete, uso de ponteiros, compatibilidade entre compiladores
+custo - analise de impacto, otimização dos recursos, eficiente
+atualizações, uso para IA, disponibilidade de ferramentas, comunidade ativa, adoção pelo mercado
+
+
+COMPILAÇÃO DO CÓDIGO PELO COMPUTADOR
+
+análise léxica - particionar, classificar e eliminar (produz uma sequencia de simbolos lexicos [tokens] e agrupa)
+análise sintática - forma que defini a estrutura daquela linguagem, depende da linguagem utilizada
+análise semântica - significado das palavras, sinais e simbolos
+
+
+PARADIGMAS DE PROGRAMAÇÃO
+
+forma de resolução de problemas com diretrizes e limitações específicas utilizando linguagem de programação
+orientação à objeto, procedural, funcional, estruturado (blocos aninhados), computação distribuída (módulos independentes), lógico.
+
+estruturado 
+sequencia, decisão, iteração; - possui performance superior por ser baixo nivel (+ dificil), problemas simples e diretos, aprender programação
+
+function fatorial (x) {
+	if(x > 1){
+		return x*fatorial (x-1);
+
+orientada objeto
+análogo ao mundo real, baseia a programação na utilização de objetos e suas interações.
+objeto é descrito por caracteristicas especificas, comportamentos e estado
+ex. descrição de uma caneta
+
+POO - reuso de código
+PE - problemas específicos e diretos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
