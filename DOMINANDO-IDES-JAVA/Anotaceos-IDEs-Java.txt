@@ -1,0 +1,36 @@
+História do JAVA
+
+é uma linguagem de programação orientada a objetos desenvolvida na década de 90, pela empresa Sun Microsystems e posteriormente adquirida pela Oracle em 2008.
+desde seu lançamento foi a plataforma mais adotada do que qualquer outra linguagem
+presente em computadores, jogos, internet, etc.
+o arquivo .java é compilado para .class e envia ao bytecode (JVM) para que o processador do sistema interprete
+A plataforma JAVA também interpreta groove, e outras linguagens
+não está presa a um único sistema operacional ou hardware, rodam através de máquina virtual que pode ser emulada
+Edições: SE (standard edition), EE (enterprise edition), ME (micro edition), CARD, FX
+
+FASES DA EXECUÇÃO
+
+1- escrita do código-fonte
+2- JDK (kit de desenvolvimento java) compila o código e gera o arquivo bytecode
+3- JVM (interpretador de java) lê o arquivo compilado para o sistema executar
+
+JDK - responsável por compilar o código
+JVM - executa o bytecode
+JRE - fornece as bibliotecas padroes do java para a JVM
+
+VERSÕES DO JAVA
+
+OpneJDK é publica
+JDK Oracle requer licença comercial
+
+IDE 
+
+software que combina ferramentas comuns de desenvolvimento em uma unica interface grafica do usuario (GUI), facilitando o desenvolvimento de aplicações
+JDK faz parte do funcionamento das IDEs, como Intellij, Eclipse, NetBens, etc.
+Eclipse - IDE para desenvolvimento Java que suporta outras linguagens, open source, gratuita
+Intellij - IDE para desenvolvimento na linguagem Java em diversas linguagens, com versão paga a gratuita.
+
+Compilaçao JAVA - javac nome.extensão
+
+
+

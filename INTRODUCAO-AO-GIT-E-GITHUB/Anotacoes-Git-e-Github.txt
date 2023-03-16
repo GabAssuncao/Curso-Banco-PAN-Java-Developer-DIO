@@ -51,6 +51,7 @@ GIT
 - echo > nome e tipo de arquivo (criar aquivo)
 - git config --list (lista das configurações registradas no git, email, nome, etc)
 - git config --global --unset user.email (retira o email)
+- git rm --cached nome da pasta (remover sub módulo da pasta)
 
 ENVIAR AQUIVOS DO GIT PARA O GITHUB
 - git remote add origin https://github.com/GabAssuncao/livro-receitas.git

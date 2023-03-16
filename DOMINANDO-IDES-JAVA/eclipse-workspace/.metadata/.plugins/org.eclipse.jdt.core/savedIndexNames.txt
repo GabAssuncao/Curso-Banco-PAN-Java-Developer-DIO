@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\Documentos\Curso Banco PAN Java Developer DIO\DOMINANDO-IDES-JAVA\eclipse-workspace\.metadata\.plugins\org.eclipse.jdt.core
+633970006.index
