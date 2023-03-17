@@ -32,5 +32,6 @@ Intellij - IDE para desenvolvimento na linguagem Java em diversas linguagens, co
 
 Compilaçao JAVA - javac nome.extensão
 
+debug - encontrar e corrigir erros que aparecem no programa
 
 

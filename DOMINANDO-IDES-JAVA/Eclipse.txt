@@ -1,2 +1,0 @@
-debug - encontrar e corrigir erros que aparecem no programa
-
