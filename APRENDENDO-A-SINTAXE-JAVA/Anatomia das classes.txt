@@ -1,0 +1,252 @@
+ANATOMIA DAS CLASSES
+
+Utilização de composição de palavras pré-definidas para determinar o nome dos arquivos, classes, atributos e metodos.
+
+iniciar o projeto iniciando um arquivo .JAVA, que deve estar com um nome coerente
+
+A primeira letra de cada palavra da classe deverá estar em maiusculo!
+
+Ex:
+"
+public class MinhaClasse {
+
+	//SEU CÓDIGO AQUI
+
+}
+"
+
+Se for classe executável, precisa ter metodo especial 
+
+Ex:
+"
+public class MinhaClasse {
+
+public static void main (String [] args) {}
+
+}
+"
+
+o metodo tambem tera um corpo, representado dentro das chaves, tudo escrito dentro da chave será existente apenas dentro do metodo escolhido
+void= vazio
+args= argumentos
+System possui configurações de entrada e saída, que levam à impressão de algo
+out= saida
+print= impressão
+String= variável de texto
+final String BR = "Brasil" - a variavel recebe um valor e nunca será alterado
+int ano = 2021 - ao longa da aplicação a variavel pode receber novos valores
+* minusculo, pode receber alterações, maiusculo, valor final, não muda.
+
+Ex:
+"
+public class MinhaClasse {
+
+public static void main (String [] args) {
+
+	System.out.print ( "Olá turma, sejam bem-vindos" );
+
+}
+
+}
+"
+
+PADRAO DE NOMENCLATURA
+
+seguir convençoes de escrita:
+
+* Arquivo.java - todo arquivo .java deve começar com a letra maiuscula, se for composta, a segunda palavra também.
+Ex: Calculadora.java, CalculadoraCientifica.java.
+
+* Nome da classe no arquivo - possui mesmo nome da classe e do arquivo
+Ex: public class MinhaClasse - MinhaClasse.java
+
+* Nome da variável: escrita com letra minuscula, porém, se palavra composta, a primeira letra da segunda palavra será maiuscula "calmeCase".
+
+String BR = "Brasil" (final)
+double PI = 3.14 (final)
+int ESTADOS_BRASILEIRO = 27 (final)
+int ANO_2000 = 2000 (final) 
+
+Os exemplos acima não mudam por serem maiusculo
+
+Para nomear nao podemos usar caracteres, numero e simbolos
+
+* apenas letras, _ (underline), $ ou os números de 0 a 9;
+* iniciar com letras ou caracteres, mas nunca numeros;
+* letra minuscula no inicio;
+* sem espaço;
+* nao usar palavras chaves;
+* nome unido dentro de um escopo
+
+//declarações invalidas de variaveis
+
+int numero&um = 1; (não pode simbolo que não seja aceito)
+int 1numero = 1; (não pode inciar com numero)
+int numero um = 1; (não pode espaço)
+int long = 1; (existencia de varialvel)
+
+//declaracoa valida
+
+int numero$um = 1
+int numero1 = 1
+int numeroum = 1
+int long = 1
+
+
+DECLARAÇÃO DE VARIÁVEIS E METODOS
+
+//estrutura
+
+Tipo NomeBemDefinido = Atribuição (opicional em alguns casos)
+
+//exemplo
+
+int idade = 23
+double altura = 1.62
+Dog spike; //observe que aqui a variavel spike não tem valor
+
+Ex:
+String meuNome = "Gabryel";
+
+int anoFabricacao = 2000;
+
+boolean verdadeira = false;
+
+boolean = verdadeira ou falsa; sim ou não
+pode ser realizada a alteração da variavel
+
+"int anoFabricacao = 2018;"
+
+//estrutura
+
+TipoRetorno NomeObjetivoNoInfinitivo Parametros
+
+//exemplo
+
+int somar (int numeroum, int numerodois)
+
+String formatarCep (long cep)
+
+um metodo pode receber parametros de tipos diferentes, e a resposta pode ser de tipos diferentes
+
+Ex:
+"public static void main (String [] args) {
+    String primeiroNome = "Gabryel";
+    String segundoNome = "Oliveira";
+
+    String nomeCompleto = nomeCompleto (primeiroNome, segundoNome);
+    System.out.println(nomeCompleto);
+}
+    
+public static String nomeCompleto (String primeiroNome, String segundoNome) {
+    return primeiroNome.concat(" ").concat(segundoNome);
+}
+"
+
+concat = concaterna, junção de 2 variaveis no resultado/impressao desejada, com adição de algo entre como "espaço"
+cada parametro separado por virgula
+
+
+IDENTAÇÃO
+
+termo utilizado para escrever o código do programa de forma hierárquica, facilitando assim a visualização e o entendimento do programa
+tab utilizado para entender que a ação só sera executada se entrar naquela modulação
+
+
+ORGANIZANDO ARQUIVOS
+
+organização dos arquivos atraves de pacotes(packages)
+comercial (com)
+opensource (op)
+organização (org)
+
+Ex:
+HyperTech > 
+com.hypertech.notification
+com.hypertech.model
+com.hypertech.service
+etc...
+
+Lucas >
+edu.lucas.primeirsasemana
+edu.lucas.segundasemana
+etc...
+
+
+JAVA BEANS
+
+estruturação universal de escrita, como expressar as declarações das mariaveis, metodos, classes e pacotes
+codigos compreendido por todos
+
+Varaies
+
+* ser clara, sem abreviações ou definição sem sentido;
+* sempre singular, exceto quando se referir a um array ou coleção;
+* idioma unico.
+
+//exemplos não recomendados
+
+double salMedio = 1500.23 //abreviação
+String emails = "alunos@escola.com" //pural
+String myName = "JOSEPH" //se idioma do projeto pt-BR, o valor deve ser em pt-BR
+
+//recomendados
+
+double slarioMedio
+String email
+String [] emails = {"aluno@escola.com","professor@escola.com}
+String meuNome
+
+Métodos
+
+nomenclatura no infinitivo, com unica função
+
+//exemplos
+
+somar (int n1, int n2) {}
+
+abrirConexao () {}
+
+concluirProcessamento () {}
+
+findById(int id) {} //varios metodos em ingles na jornada
+
+calcularImprimir () {} // deveria ter uma única finalidade
+
+
+TIPOS E VARIAVEIS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
