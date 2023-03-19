@@ -1,6 +1,6 @@
 package edu.gabryel.variaveis;
 
-public class TipoVariaveis {
+public class TiposVariaveis {
     
     public static void main(String[] args) {
         boolean condicao1=true;

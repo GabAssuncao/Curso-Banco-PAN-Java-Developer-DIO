@@ -1,6 +1,6 @@
 package edu.gabryel.projeto.sistema;
 
-public class Usuario {
+public class Usuarios {
     public static void main(String [] args) throws Exception {
         
         SmartTv smartTv = new SmartTv();

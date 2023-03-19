@@ -1,6 +1,6 @@
 package edu.gabryel.aplication;
 
-public class MinhaClasse {
+public class Testes {
 
 public static void main (String [] args) {
     String primeiroNome = "Gabryel";
