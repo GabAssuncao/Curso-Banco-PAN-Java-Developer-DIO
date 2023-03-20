@@ -1,0 +1,42 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "TesteExecutavel",
+            "request": "launch",
+            "mainClass": "TesteExecutavel",
+            "projectName": "java-anatomia-classes_283370df"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Testes",
+            "request": "launch",
+            "mainClass": "edu.gabryel.aplication.Testes",
+            "projectName": "java-anatomia-classes_283370df"
+        },
+        {
+            "type": "java",
+            "name": "Usuarios",
+            "request": "launch",
+            "mainClass": "edu.gabryel.projeto.sistema.Usuarios",
+            "projectName": "java-anatomia-classes_283370df"
+        },
+        {
+            "type": "java",
+            "name": "TiposVariaveis",
+            "request": "launch",
+            "mainClass": "edu.gabryel.variaveis.TiposVariaveis",
+            "projectName": "java-anatomia-classes_283370df"
+        }
+    ]
+}

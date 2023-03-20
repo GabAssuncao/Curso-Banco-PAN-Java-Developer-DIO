@@ -1,0 +1,87 @@
+SIMBOLOGIA
+
+igualdade == (sempre dois, = é apenas para atribuição);
+diferença !=
+maior >
+maior igual >=
+menor <
+menor igual <=
+
+Ex:
+i1 == i2
+i1 != i2
+i1 > i2
+i1 <= i2
+
+OPERADORES LOGICOS
+
+simbolos especiais capazes de realizar operações logicas ou expressoes e retornar um resultado
+
+* conjunção - ambos os operadores ou expressoes sao verdade (&&, and);
+* disjuncao - ambos os operadores ou expressoes sao falsas (||, or);
+* disjuncao exclusiva - ambos os operadores ou expressoes sao opostos (^, xor)
+* negacao - inverte o valor logico de um operando ou expressao (!, inverção)
+
+QUANDO UTILIZAR?
+
+depende do tipo de decisão a ser tomada
+
+* operador bitwise - & e |, mexe com bits de números inteiros, não são operadores lógicos;
+* operadores shift: ~, >>, >>>, <<, invertem o número, rara utilização
+
+BOA PRÁTICAS
+
+crie variaveis euxiliare para guardar resultados intermediarios
+
+(salarioMensal < mediaSalario) && (quantidadeDependentes >= mediaDependentes)
+
+pode ser 
+
+(salarioBaixo) && (MuitosDependentes)
+
+boolean recebeAuxilio = (salarioBaixo) && (muitosDependentes)
+
+EXERCITANDO
+
+crie um projeto simples codificando os exemplos dos slides anterior, utilizando operandos e expressões
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

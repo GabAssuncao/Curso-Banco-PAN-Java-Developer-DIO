@@ -216,6 +216,313 @@ calcularImprimir () {} // deveria ter uma única finalidade
 
 TIPOS E VARIAVEIS
 
+palavras para a representacao de tipos de dados base
+
+tipos primitivos que representam valores brutos: int, byte, short, long, float, double, boolean, char
+armazenados na memory stack
+
+* byte (1byte) -128 a 127
+* short (2bytes) -32.768 a 32.768
+* int (4bytes) -2.147.483.648 a 2.147.483.648
+* long (8bytes) -9.223.372.036.854.775.808 a 9.223.372.036.854.775.808 
+* float (4bytes) representa partes fracionatias -3,4028E + 38
+* double (8bytes) -1,7865...
+
+Declaração de variaveis
+
+espaço em memoria utilizado pelo programa, composta por tipo de dados+ nome+atribuicao
+
+"
+//exemplo
+
+int idade;
+int anoFabricacao = 2022
+double salarioMinimo = 2.500
+"
+
+float precisa terminar com F para reconhecimento!!
+long precisa terminar com L para reconhecimento!!
+se int e long começarem com 0, talvez seja necessario identificar com outra variavel, como String
+casting*
+
+
+VARIAVEIS E CONSTANTES
+
+constantes sao valores armazenados em memoria que não podem ser modificados depois de definidos seu valor, representado pela paravra final.
+deve estar em CAIXA ALTA
+
+"
+final double VALOR_DE_PI = 3.14;
+"
+
+
+OPERADORES
+
+simbolos especiais com significado proprio e assossiados a determinadas programações
+
+atribuição representado pelo simbolo de igualdade =, subscrevre o valor de uma variavel ou alterá-lo
+
+//classe Operadores.java
+
+String nom = "Gabryel"; //decessários aspas para identificação do nome
+int idade == 22; //numeros inteiros
+double peso = 79.5; //numeros quebrados
+char sexo = 'M'; //classe 
+boolean doadorOrgao = false; //false ou true
+Date dataNascimento = new Date(); //precisa ter a pavra new com a classe e posteriormente parametros
+
+aritmeticos
+
+realizar operações matematicas
+
++, -, /, *
+
+//
+double soma = 10.5 + 15.7;
+int subtração = 113 - 25;
+int multiplicação = 20 * 7;
+int divisao = 15 / 3;
+int modeulo = 18 % 3; //verificar se ira resultar numeros fracionados;
+double resultado = (10 * 7) + (20 / 4); //mais complexo
+
++ em String junta os textos (concatenação)
+
+//
+String nomeCompleto = "LINGUAGEM" + "JAVA";
+
+//resultado
+LINGUAGEMJAVA
+
+
+unario
+
+aplicados junto com outro operador aritmetico, incrementar, incrementar, inverter valores numericos e booleanos.
+
+* + valor positivo
+* - valor negativo, converte em negativo
+* (++) incremento o valor em +1
+* (--) decrementa o valor em -1
+* (!) nega o valor de uma expressao booleana
+
+Ternário
+
+forma resumida para definir uma condição e escolher entre 2 ou mais valores, como se fosse IF porém toda a estrutura escrita em 1 unica linha
+simbolos = "?:"
+
+"
+//Exemplo
+int a. b;
+
+a = 5;
+b = 6;
+
+String resultado = "";
+if(a==b)
+	resultado = "verdadeiro";
+else
+	resultado = "falso";
+"
+
+para
+
+"
+int a. b;
+
+a = 5;
+b = 6;
+
+String resultado = "";
+String resultado = a==b ? "verdadeiro" : "falso";
+"
+
+Relacionais
+
+* == verifica se há igualdade 
+* != compara se são diferente
+* > se é maior
+* >= se é maior igual
+* < se é menor
+* <= se é menor igual
+
+"
+int numero1= 1;
+int numero2 = 2;
+
+        boolean simNao = numero1 == numero2;
+
+        System.out.println("numeroUm é igual a numeroDois? " + simNao);
+"
+
+
+Lógicos
+
+"
+boolean condicao1=true;
+
+boolean condicao2=false;
+
+if(condicao1 && condicao2){
+	System.out.println("as duas condições são verdadeiras");
+}
+
+if(condicao1 || condicao2){
+	System.out.println("uma das condicoes e verdadeiras");
+}
+
+System.out.println("fim")
+"
+
+&& ambas as condições devem ser verdadeiras
+|| uma ou outra condicao deve ser verdadeira
+
+Metodos
+
+Os metodos correspondem a funções ou sub-rotinas disponíveis dentro de nossas classes.
+
+criterio de nomeação:
+* nomeado como verbo;
+* padrão camlCase;
+
+Ex:
+somar(int n1, int n2) {}
+abrirConexao() {}
+concluirProcessamento() {}
+findById(int id) {}
+calcularImprimir() {} //conflito por ter 2 ações
+
+todos os metodos devem sempre ser definidos dentro de uma classe
+
+1, Qual a proposta principal do metodo? Se perguntar ate entender a finalidade
+2. Qual o tipo de retorno esperado após executar? Analisar se o metodo será responsavel em retornar algum valor ou não
+
+Caso não retorne nenhum valor, será representado pela palavra chave void.
+
+1. Quais os parametros serão necessários para execução do metodo? precisam de argumentos
+2. O metodo possui o risco de apresentar alguma exceção? as vezes é necessário prever e tratar a possível existencia de uma exceção
+3. Qual a visibilidade do metodo? seja visivel a toda a aplicação, em mesmo pacotes, através de herança ou somente numel a propria classe
+
+//Exemplo
+public class MyClass {
+	
+	public double somar(int num1, int num2) {
+		//LOGICA - FINALIZADA DO METODO
+		return ...;	
+	}
+
+	public void imprimir(String texto) {
+		//LOGICA - 
+		//AQUI NÃO PRECISA DO RETURN
+		//POIS NÃO SERÁ RETORNADO NENHUM RESULTADO
+	}
+"
+
+throws Exception: indica que o metodo ao ser utilizado poderá gerar uma exceção
+
+EXERCITANDO
+
+criar um exemplo de uma classe para representar SmartTV onde: ligada, canal e volume
+
+
+ESCOPO
+
+variavel é criada no primeiro acesso, tornando inacessível fora do seu bloco de declaração.
+
+//
+public class Conta {
+		//variavel da classe conta
+		double saldo = 10.0;
+	
+	public void sacad(Double valor);
+		//variavel local de metodo
+		double novoSaldo - saldo - valor;
+	}
+	public void imprimirSaldo(){
+		//disponível em toda classe
+		System.out.println("Novo saldo: " + novoSaldo);
+}
+//
+
+variavel de classe funciona para toda a classe, variavel de metodo apenas em metodo e variavel de função, funciona apenas dentro da funcao
+
+
+Palavras reservadas
+
+identificadores que possuem finalidade especifica, não podendo ser utilizadas para nomear variaveis, classes, metodos ou atributos
+Java possui 52 palavras reservadas, classificadas em grupo e com letra minuscula
+
+* controle de pacotes = import (importa), package (especifica o pacote da classe)
+* modificação de acesso = public, private, protected (acesso por classes no mesmo pacote e subclasses)
+* primitivos = boolean, byte, char, double, float, int, long, short, void
+* modificadores de classes, variaveis ou metodos = abstract (não possui comportamento), class, 
+extends (extenção de uma classe), final, implements (interface que uma classe irá implementar),
+interface, native, new (novo objeto), static, strictfp, synchronized (só pode ser acessado por uma thread de cada vez),
+transient (impede o salavamento da informação), volatile.
+* controle de fluxo dentro de um bloco de código = break, case, continue...
+...
+
+Palavras opostas
+
+ao se utilizar uma, a outra não pode ser citada
+
+
+Documentação
+
+tags - informações adquiridas através de classes documentadas na linguagem
+/** comentários para documentação
+javadoc - criador de documentação visual
+
+
+Terminal e argumentos
+
+com a JVM configurada, conseguimos criar um executavl do programa e disponibilizar o arquivo para qualquer sistema operacional.
+identificar onde está o .class presente projeto na pasta bin, acessar a pasta do .class pelo terminal (CMD), executar "java nomedo.class"
+
+
+SCANNER
+
+melhor iteração com relação à entrada de dados dos usuários.
+iteração mais assertiva com o programa.
+
+//
+import java.util.Locale;
+import java.util.Scanner;
+
+public class TesteExecutavel {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.US);
+
+        System.out.println("Digite seu nome");
+        String nome = scanner.next();
+
+        System.out.println("Digite seu sobrenome");
+        String sobrenome = scanner.next();
+
+        System.out.println("Digite sua idade");
+        int idade = scanner.nextInt();
+
+        System.out.println("Digite sua altura");
+        double altura = scanner.nextDouble();
+
+        System.out.println("Ola, me chamo " + nome + " " + sobrenome);
+        System.out.println("Tenho " + idade + " anos");
+        System.out.println("Minha altura é " + altura + "cm");     
+    }
+}
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
