@@ -1,0 +1,326 @@
+ARQUITETURA DE UM PC
+
+Componentes de memória:
+
+* memória RAM - possui chips com endereços de memória, capazes de armazenar milhões de bits (cada) 
+por determinado tempo - (cada chip possui 8bytes = inteiro);
+* memória secundária - grava os dados e armazena enquanto não possuir energia
+* memória primária - gravação de dados apenas enquanto possui energia
+
+ATIBUIÇÃO E REFERÊNCIA 
+
+* atribuição - cópia de valor
+* com tipo primitivo, copiamos o valor em memória;
+* com objetos copiamos o valor da referência em memória, sem duplicar o objeto;
+
+Em caso de uma classe primitiva, a referência não é armazenada, porém, em caso de classe objeto, é armazenado a referência de memória.
+
+CONCEITO DE NÓ
+
+espaço em memoria que armazena o dado em questão e uma referência para o proximo nó (armazena o dado inteiro e elo de ref)
+pega o segundo nó e atribui a essa referência, o último nó é apontado para => null
+
+int		int
+   ref nó > 	   ref nó > null
+
+GENERICS EM JAVA
+
+Lista<String> minhaLista = new Lista <>();
+
+public class Lista<T> {
+	private T t;
+	.
+	.
+	.
+}
+
+Wildcards
+
+* Unknown Wildcards (Unbounded)
+
+public void imprimeLista(List<?> lista){
+	for(Object obj : list){
+		System.out.println(obj);
+	}
+}
+List<Aluno> minhaLista = new List<Aluno>();
+imprimeLista(minhaLista);
+
+
+* Bounde Wildcards (Upper Bounded/Lower Bounded)
+
+public void imprimeLista(List<? extends Pessoa> listaPessoas){
+	for(Pessoa p : listaPessoas){
+		System.out.println(p);
+	}
+}
+List<Aluno> minhaLista = new List<Aluno>();
+imprimeLista(minhaLista);
+
+public void imprimeLista(List<? super Pessoa> listaPessoas){
+	for(Pessoa p : listaPessoas){
+		System.out.println(p);
+	}
+}
+List<Aluno> minhaLista = new List<Aluno>();
+imprimeLista(minhaLista);
+
+Convenção
+ 
+* K para "Key", exemplo : Map<K,V>
+* V para "Value", exemplo : Map<K,V>
+* E para "Element", exemplo : List<E>
+* T para "Type", exemplo : Collections#addAll
+* ? quando genérico
+
+REFATORAÇÃO DA CLASSE NO
+
+public class No<T> {
+
+	private T conteudo;
+	private No proximoNo = null;
+		.
+		.
+		.
+}
+
+EXPLICAÇÃO TEÓRICA DO CONCEITO DE PILHAS
+
+"pilha de livro" - por seguir regras de uma pilha real
+
+1 regra - o ultimo elemento é sempre o primeiro a sair, e sucessivamente (LIFO - last in first out);
+
+encadeia os nós como se fosse em pilha, há sempre uma referência de nó que aponta para o topo, a base aponta para null!
+
+Método Top - referência analisa o nó do topo, porém o mantem na pilha.
+
+//
+No meuNo = pilha.top();
+
+No meuNo = 'No em questão analisado';
+
+int numero = meuNo.getInt();
+
+int numero = 'inteiro do No';
+//
+
+Método Pop - tira o primeiro livra da pilha de fato, exclui e passa a referência para o nó de baixo.
+
+//
+No meuNo = pilha.pop();
+
+No meuNo = 'Nó em questão analisado';
+
+int numero = meuNo.getInt();
+
+int numero = 'inteiro do Nó posterior';
+//
+
+Método Push - criação de um novo Nó no topo em conjunto com a sequência de referência de topo.
+
+//
+No meuNo = new No();
+
+meuNo.setInt;
+
+meuNo 'o topo passa a ser o Nó criado';
+//
+
+Método isEmpty - verifica se a referência para entrada da pilha está nula (vazia ou não).
+
+//
+public boolean isEmpty(){
+	if(refNo == null){
+		return true;
+	}
+	return false;
+}
+//
+
+IMPLEMENTAÇÃO DA CLASSE PILHA COM OS MÉTODOS
+
+public class Pilha {
+
+    private No refNoEntradaPilha;
+
+    public Pilha() {
+
+        this.refNoEntradaPilha = null;
+    }
+
+    public void push(No novoNo) {
+        No refAuxiliar = refNoEntradaPilha;
+        refNoEntradaPilha = novoNo;
+        refNoEntradaPilha.setRefNo(refAuxiliar);
+    }
+
+    public No pop() {
+        if(!this.isEmpty()) {
+            No noPoped = refNoEntradaPilha;
+            refNoEntradaPilha = refNoEntradaPilha.getRefNo();
+            return noPoped;
+        }
+        return null;
+    }
+
+    public No top() {
+        return refNoEntradaPilha;
+    }
+
+    public boolean isEmpty() {
+
+        //if(refNoEntradaPilha == null) {
+        //    return true;
+        //}
+        //return false;
+        return refNoEntradaPilha == null ? true : false;
+    }
+
+CONCEITO DE FILAS
+
+'fila de pessoas' - o primeio que chega é o primeiro a ser atendido, seguindo uma ordem de chegada para atendimento;
+FIFO - first in firt out
+
+Object()	Objetc()
+      ref nó > 	      ref nó > null (o primeiro sempre aponta para null)
+
+Métodos:
+
+* enqueue() - o último ref é redireciona para o último nó oncluso na fila
+* dequeue() - retirada do primeiro nó da fila, o nó em sequencia aponta para null
+
+
+CONCEITO DE LISTAS ENCADEADAS
+
+Estrutura:
+
+	 Object()	 Objetc()
+ref nó >       ref nó >       ref nó > null (o primeiro sempre aponta para null)
+
+Métodos:
+
+*Add() - adição de nó no local da lista que quiser (possibilidade de incluir no meio);
+*Remove() - remoção de um nó da lista, de onde quiser (possibilidade de excluir do meio);
+*get() - cópia de determinado nó.
+
+
+LISTA DUPLAMENTE ENCADEADAS
+
+	 		ref ult nó >	   Object()	   Objetc()	  Object()   < ref pri nó
+(o último sempre aponta para null) null   < ref nó > 	  < ref nó >     < ref nó > null (o primeiro sempre aponta para null)
+
+Adiciona nó em qualquer lugar da lista
+
+LISTAS CIRCULARES
+
+O inicio da lista se comunica com o ultimo elemento da lista.
+
+Métodos:
+
+.add() - adição de nó no final ou inicio, a referência de comunicação muda para o primeiro se comunicar com o ultimo.
+
+
+ARVORES
+
+estrutura de dados bidimensional, não linear, constituida de nós que representam um modelo hierarquico
+listas, filas e pilhas são estruturas lineares
+
+Utilização:
+
+sistemas de arquivos, bancos de dados, interfaces gráficas, páginas web.
+
+Representações:
+
+hierarquica, por inclusão, por parenteses aninhados
+
+Caracteristicas:
+
+nó, raiz, pai e filho, irmao, nivel de um nó (posição hierarquica), altura ou profundidade (grau máximo dos nós), 
+folha ou nó terminal, nó interno, grau de um nó, subarvore.
+
+Tipos de árvores:
+
+Binária, AVL (, ordenada, rubro-negra, 2-3, 2-4, B, B+, hiperbolica.
+
+* Binária (posição dos nós = maiores à direita e menores à esquerda);
+
+	     Object()
+       |-noEsq      noDir-|
+    Objsct()	       Objsct()
+noEsq     noDir	    noEsq     noDir
+
+O conteúdo do no tem que ser comparável! public class BinNo<T extends Comparable<T>> {
+
+Inserção: através da raíz da arvore, comparando com os nós até chegar na última folha das devidas comparações!
+
+Exclusão da raiz: maior nó da ramificação esquerda substitui a raiz!
+
+Exibição: algoritmo recursivo.
+
+Atravessamento IN-ORDEM (organização em ordem crescente)
+Atravessaemtno PRE-ORDEM (analisa antes de organizar - organização primeiro do lado esquerdo em diagonal continua)
+Atravessamento POS-ORDEM (analisa depois de organizar)
+
+AVL (, ordenada, rubro-negra, 2-3, 2-4, B, B+, hiperbolica.
+
+Equal() e hashCode() - Melhora a busca de objetos, devem ser implementados juntos
+
+Principais metodos Stack: 
+
+* push
+* pop
+* peek
+* empty
+
+Queue principais metodos:
+
+* add
+* element
+* offer
+* isEmpty
+
+List principais metodos:
+
+add
+constains
+get
+index
+remove
+
+List principais metodos:
+
+Set principais metodos:
+
+Maps principais metodos:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

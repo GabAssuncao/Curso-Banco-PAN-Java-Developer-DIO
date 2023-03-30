@@ -43,18 +43,18 @@ public class Main {
         System.out.println("s1 == s2 " + (s1 == s2));
         System.out.println("s1 == s3 " + (s1 == s3));
         System.out.println("s1 != s2 " + (s1 != s2));
-        //System.out.println("s1 > s2 " + (s1 > s2));
-        //System.out.println("s1 <= s2 " + (s1 <= s2));
+        System.out.println("s1 > s2 " + (s1 > s2));
+        System.out.println("s1 <= s2 " + (s1 <= s2));
 
         System.out.println("b1 == b2 " + (b1 == b2));
         System.out.println("b1 != b2 " + (b1 != b2));
-        //System.out.println("b1 > b2 " + (b1 > b2));
-        //System.out.println("b1 <= b2 " + (b1 <= b2));
+        System.out.println("b1 > b2 " + (b1 > b2));
+        System.out.println("b1 <= b2 " + (b1 <= b2));
 
         System.out.println("i2 > f1 " + (i2 > f1));
         System.out.println("d1 == h1 " + (d1 == h1));
-        //System.out.println("s2 != c1 " + (s2 != c1));
-        //System.out.println("s3 != i1 " + (s3 != i1));
+        System.out.println("s2 != c1 " + (s2 != c1));
+        System.out.println("s3 != i1 " + (s3 != i1));
 
         System.out.println("L1 == i2 " + (L1 == i2));
         System.out.println("L2 >= i1 " + (L2 >= i1));

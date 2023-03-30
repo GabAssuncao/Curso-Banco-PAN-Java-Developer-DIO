@@ -1,0 +1,90 @@
+CRIAÇÃO DE METODOS
+
+é uma porçao de codigo disponibilizada por uma classe, responsavel por definir e realizar um comportamento.
+executado quando é feito uma requisição a ele
+
+<visibilidade><tipo><modificador>retorno, nome(<parametros>)<exceções>corpo
+
+V - public, protected ou provate
+T - concreto ou abstrato
+M - static ou final
+R - tipode de dado ou void
+N - nome que é fornecido ao metodo
+P - parametros que pode receber
+E - exceções que pode lançar
+C - codigo que possui o vazio
+
+passa-se uma mensagem atraves de uma classe ou objeto
+
+Ex:
+noma da classe.nome do metodo(); ou nome da classe.nome do metodo (...);
+noma do objeto.nome do metodo(); ou nome do objeto.nome do metodo (...);
+math.random(). ou Math.sqrt(4);
+usuariao.getEmail(); ou usuario.alterarEndereco(enderecoUsuario);
+
+Assinatura: forma de identificar o metodo
+
+public static calcularTotal(double item1, double item2, double item3) {}
+
+Passagem de parametros
+
+* por valor (copia)
+* por referencia (endereco)
+
+SOBRECARGA
+
+capacitade de definir metodos para diferentes contextos, mas preservando seu nome (se comporta de forma diferente de acordo com o contexto)
+mudar lista de parametros
+um exemplo seria o println, pode ser combinado com outros parametros para fazer a impressao no console
+muito comum
+
+Sobrecarga x Sobrescrita
+
+são conceitos que atuam sobre os metodos, mas são diferentes de trabalhar
+sobrescrita está ligada ao metodo de herança (orientação objeto)
+
+
+RETORNOS
+
+instrução de interrupção, atrelado ao metodo;
+"return"
+executa todas as instruções internas, chega a uma declaração explicita de retorno ou lança exceção (erro)!
+definido na sua criação, tipo primitivo ou objeto
+dado compativel com o do metodo (metodo int - retorno deve ser int, etc)
+metodo void não precisa ter um return para encerramento (não retorna nada!)
+return pode ser utilizado como estrutura de decisão para saber se algo será executado caso seja true ou false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

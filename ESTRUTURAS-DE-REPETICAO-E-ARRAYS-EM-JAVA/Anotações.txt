@@ -1,0 +1,19 @@
+ESTRUTURA DE REPETIÇÃO
+
+o poder dos computadores esta na habilidade para repetir uma operação ou ou uma serie de operações;
+cada repetição é chamada de loop;
+permite que uma sequencia de comandos seja executada repetidamente, caso determinadoas condiçoões sejam satisfeitas;
+as condições são representas por expressoes lógicas boolean;
+
+* while - repetição com teste no inicio
+* do-while - repetição com teste no final
+* for - repetição contada
+* break - terminar de forma abrupta uma repetição
+* continue - os comandos restantes da execução são descartados e volta para o inicio da expressão
+
+ARRAYS
+
+é um objeto utilizado para armazenar sequencialmente dados do mesmo tipo
+permanece com o mesmo tamanho depois de criados
+
+
