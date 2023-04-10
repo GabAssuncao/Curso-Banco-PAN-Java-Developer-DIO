@@ -1,0 +1,10 @@
+DEBUGGING 
+
+erros de programação sao bugs, o processo é encontrar e corrigir bugs (depuração ou debugging)
+
+* Erros de sintaxe - regras de linguagem
+* Erros de semantica - logica
+
+Pilha de execução - toda invocação de metodo é empilhada em uma estrutura de dados que isola a area de memoria de cada um
+
+Stack Trace - matriz onde encontramos a pilha de execução (lê-se de baixo para cima)

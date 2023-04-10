@@ -1,0 +1,243 @@
+OBJETIVOS
+
+Por que devemos programar orientado a objetos?
+Paradigma estruturado é mais simplista (funções e dados), objeto representa mais realista (modelagem de entidades e interações);
+
+* Melhor coesão
+* melhor acoplamento
+* diminuição do gap semantico
+* coletor de lixo
+
+A orientação objeto é um paradigma de analise, projeto e programação de sistemas de software baseado na composição i interação entre diversas unidades de software chamadas de objetos.
+
+Fundamentos:
+
+* abstração - capacidade de pensar nas caracteristicas essenciais de uma entidade;
+* reuso - novas unidades de codigos de outras ja existentes;
+* encapsulamento - esconder complexidades e proteger dados;
+
+CLASSES
+
+descreve os serviços providos por seus objetos e quais informações eles podem armazenar.
+ 
+* substantivos
+* nomes significativos
+* contexto deve ser considerado
+
+ATRIBUTO
+
+elemento responsavel por definir sua estrutura de dados, responsavel por representar suas caracteristicas e fara parte dos objetos criados a partir da classe.
+atributo é próprio de alguém ou algo x variavel está sujeito a mudanças
+
+* substantivos e adjetivos
+* nomes significativos
+* contexto deve ser considerado 
+* abstração
+* tipos adequados
+
+METODO
+
+porção de codigo disponibilizado pela classe que é executado quando é feito uma requisição a ele
+serve para identificar os serviços do objeto
+
+* visibilidade 
+* retorno
+* nome significativos
+* parametros
+* verbos
+* contexto deve ser considerado
+
+Construtor - cria objetos a partir das classes
+
+calss Carro {
+	Carro () {
+		...
+	}
+}
+
+Destrutor - auxilia à destruição de um objeto
+
+class Carro {
+	void finalize () {
+		...
+	}
+}
+
+Sobrecarga - mudar a assinatura de acordo com a necessidade, mesma classe com parametros diferentes;
+para representar o mundo real de forma mais precisa
+
+OBJETO
+
+representação de um conceito/entidade do mundo real, que pode ser fisica ou conceitual
+
+Carro carro = new Carro();
+
+MENSAGEM 
+
+processo de ativição de um objeto, quando a chamada desse metodo é realizada
+
+Carro carro = new Carro();
+carro.<metodo>;
+
+carro.<metodo>;
+
+
+HERANÇA
+
+relacionamento entre classes (sub classe, classe filha, derivada, classe pai)
+a sub classe define os proprios metodos, mas consegue reaproveitar os atributos.
+
+class A extends B {
+
+}
+
+Nem tudo que esta presente na classe mae estara presente nas subclasses!
+
+Tipos de herança
+
+* simples - classe filha tem apenas 1 classe mae
+
+* multipla - classe filha tem mais de 1 classe mae (phyton e C++)
+	metodos com mesmo nome podem causar conflito
+
+Upcast e Downcast
+
+respectivamente subir na hierarquia e descer na hierarquia
+
+Upcast Java = A a = new B();
+Donwcast Java = B a = (B) new (A); - recomenda-se não utilizar!
+
+
+POLIMORFISMO
+
+a mesma ação de comportando diferente
+Ex: Pagamento - pode ser realizado de diversas formas
+
+SOBRESCRITA
+
+a mesma ação podendo se comportar diferente
+Ex: Conta - a exibição do saldo pode ser diferente dependendo do tipo de conta
+
+
+ASSOCIAÇÃO
+
+relacionamento entre classes/objetos onde pedem ajudar a outras.
+Não pode ser alterada a ordem.
+
+* Estrutural - 
+	Composição - Como um todo = um dado existe como um todo (Ex: dependecia de uma pessoa às informações derivadas dela)
+		class Pessoa {
+			Endereço endereço
+		}
+	agregação - Sem parte todo = um dado existe sem o outro, apesar da relação (Ex: aluno vinculado a uma disciplina)
+		class Disciplina {
+			Aluno aluno
+		}
+
+* Comportamental - 
+	Dependência - Depende de = um metodo está estritamente vinculada a uma entidade objeto (Ex: compra através de cupom)
+		class Compra {
+			finalizar (Cupom cupom, ...) {
+			}
+		}
+
+INTERFACE
+
+contrato que deve ser seguido pela classe que a implementa, se compromete a realizar todos os comportamentos que a interface disponibiliza.
+Ex: impressora disponibiliza interface com metodos proprios para qualquer sistema operacional pode utilizar
+
+interface A {
+	...
+}
+
+class B implements A {
+	...
+}
+
+Ex:
+interface OperacaoMatematica {
+
+    void soma(double operando1, double operando2);
+
+    void subtracao (double operando1, double operando2);
+
+    void multiplicacao (double operando1, double operando2);
+
+    void divisao (double operando1, double operando2);
+    
+}
+
+
+PACOTES
+
+organizção fisica ou logica, para separar classes com responsabilidades diferentes, buscando melhor organização
+
+package ...;
+import ...;
+
+
+VISIBILIDADES
+
+modificador de acesso, determinar até que ponto uma classe, atributo ou metodo pode ser usado
+fundamental  para o uso efetivo da orientação a objetos
+usar os três em conjunto, em determinadas situações
+
+* private - 
+	Só dentro da classe definida
+
+	private
+	private int i;
+	private void do();
+
+* protected - 
+	Dentro da classe, mesmo pacote e subclasses
+
+	protected
+	protected int i;
+	protected void do();
+
+* public - 
+	Em qialquer lugar
+
+	public
+	public int i;
+	public void do();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

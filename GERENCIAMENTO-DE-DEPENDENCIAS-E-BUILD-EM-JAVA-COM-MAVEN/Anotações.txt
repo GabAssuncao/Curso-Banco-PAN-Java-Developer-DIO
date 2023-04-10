@@ -1,0 +1,162 @@
+MAVEN
+
+Compilar classes java da aplicação
+empacotar e executar os testes
+
+mvn archetype:generate -DgroupId=one.digitalinnovation -DartifactId=quick-start-maven -Darchetype=maven-archetype-quickstart -DinteractiveMode=false
+
+comando de geração de teamplate
+
+COMANDOS
+
+* compilar o codigo: compile
+* testar - test
+* empacotar - package
+* limpar o diretório de trabalho - clean
+
+MAVEN ARCHETYPE
+
+template em que é definida versao de componentes, organização de pacotes e arquivos
+definir tipos de templates para diversas funcionalidades
+
+Google: "maven archetype list" - encontrar a opção que faz mais sentido no seu cenário
+
+POM - project object model
+
+unidade fundamental de trabalho
+formato xml
+detalha o projeto
+detalha como construir o projeto
+sempre utiliza do xml para executar sua função
+
+REPOSITÓRIOS
+
+remoto - armazenamento de informações utilizado pelo super pom para atualizar o maven central
+local - semelhante ao remoto, maquina utilizada pelo maven para buscar os artefatos
+mvn compile adiciona ao repositorio local
+
+ADICIONAR DEPENDENCIAS AO PROJETO
+
+* goupId: é como se fosse o id da organização, segue as regras de nomas de pacote Java
+* artifactId: nome do projeto em si
+* version: número da versão que será utilizada
+
+na pratica - procurar a inclusão a ser feita no site da maven e incluir o texto na parte correto do pom.xlm
+
+GERENCIAMENTO DE DEPENDENCIAS
+
+* mvn install - publica localmente o seu projeto
+dependencias diretas (declara no pom.xlm) e transitivas (o componente também declarou e são obrigatorias)
+
+TRANSITIVIDADES E ESCOPO
+
+o maven promove escopos para limitar a transitividade das dependencias, existem 6 tipos de escopos que podemos utilizar
+
+Classpath
+
+* runtime - a dependencia é necessária para execução e não compilação
+* test - disponivel para compilação e execução dos testes, não é transitiva
+* compile - default, disponível em todos os classpaths, é transitivo
+* provided - dependencia fornecida em tempo de execução, pela JDK ou via container
+* system - parecido com provided, exceto por ser necessario prover o JAR expicitamente
+* import - disponivel apenas com uma dependencia do tipo pom, reutilizar dependencias de outro projeto
+
+DEPENDENCIAS OPCIONAIS
+
+quando uma dependencia não é necessaria para os projetos que irao utilizar seu componente
+
+EXCLUSIONS
+
+utilizado quando o componente que voce usa compartilha uma biblioteca que voce ja tem ou nao quer ter disponível
+
+MAVEN BUILD LIFECYCLE
+
+* conceito de ciclo de vida de construção
+* conceito e os comandos da ferramenta
+* comporsto por 3 ciclos de vida: 
+default (responsavel pelo deploy local, composto pode 23 fases) - clean (limpeza do projeto, composto por 3 fases) - site (criação do site de documentação do projeto, composto por 4 fases)
+* cada ciclo possui fases (maven phases)
+* cada fase possui objetivos (mevan goals)
+
+PROJETOS MULTI-MÓDULOS
+
+projeto agregador e os componentes internos são chamados de sub-módulos (service, cor, controller e webapp)
+
+PLUGINS
+
+comandos utilizados no dia a dia, arquitetura por tras do maven, disponibilizados comumente como JARs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

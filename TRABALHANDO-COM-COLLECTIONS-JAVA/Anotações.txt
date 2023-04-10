@@ -1,0 +1,81 @@
+COLLECTIONS
+
+objeto que agrupa multiplos elementos dentro de uma unica unidade.
+serve para armazenar e processar conjuntos de dados de forma eficiente
+
+Composição
+
+* interfaces - contato que quando assumido por uma classe deve ser implementado
+* implementações ou classes
+* algoritmos - sequencia logica definida de instruções que devem ser seguidas para resolver um problema
+
+LIST
+
+import java.util.List;
+permite elementos duplicados e garante ordem de inserção
+a ordem de inclusão dos elementos na lista será a mesma na hora de impressão da list em si
+ 
+* ArrayList - usado onde mais operações de pesquisa são necessárias (demora mais tempo para fazer a exclusão de um elemento)
+* Vector
+* LinkedList - deve ser usado onde mais operações de inserção e exclusão são necessarias 
+
+
+COLEÇÕES SINGULARES
+
+import java.util.Set;
+nao permite elementos duplicados
+nao possui indice
+
+HashSet - usa HashMap para armazenar elementos, não mantem ordem, nelhor performance
+LinkedHashSet - usa LinkedHashMap para armazenar elementos, mantem ordem, performance intermediaria
+TreeSet - usa treeMap para armazenar elementos, mantem ordem natural, má performance
+
+
+COLEÇÕES DE PARES: MAP
+
+import java.util.Map;
+
+elementos unicos (key) para cada valor (value)
+
+* HashMap
+* LinkedHashMap
+* TreeMap
+
+
+JAVA STREAMS
+
+* Classe anonima - classe que não recebeu nome e é tanto declarado e instanciado em uma unica instrução, será instanciada apenas uma vez;
+* Functional Interface - SAM é uma interface funcional e sua implementação pode ser trada como expressões lambda;
+* Lambda - função sem declaração, não é preciso colocar nome, retornor ou modificador, o metodo é declarado no mesmo lugar que será usado (simplificar classe anonima); 
+	(argumento) -> (corpo).
+* Referente Method - recurso que permite fazer rerferencia a um metodo ou construtor de uma classe, e indicar que deve ser utilizado em ponto espeficico (simplificar lambda);
+	informar uma classe seguida do :: e o nome do metodo sem os parenteses no final.
+* Streams API - combinada com as expressoes lambdas proporciona forma diferente de lidar com conjuntos de elementos, tornando mais simples e conciso;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,108 @@
+TETSES UNITARIOS
+
+testes de unidade
+testando a menor unidade de codigo possivel (funcao, metodo)
+testar a aplicacao na menor parte
+escrito em tempo de desenvolvimento
+
+Por quê?
+
+compreender o codigo fonte
+corrigir bugs com segurança
+refatorar codigo sem introduzir bugs
+entregar com seguranca uma nova feature
+
+Beneficios: piramide de testes, testes unitarios como metrica de qualidade (confiabilidade), cobertura de testes, automacao na execucao de testes, cultura de agilidade
+
+JUnit
+
+* platform
+* jupiter - representacao de anotacoes
+* vintage - integracao com as versoes mais antigas
+
+@Test é essencial para testar
+cenario - criação das caracteristicas do teste
+validação - verificar se vai dar a resposta desejada
+
+Assertions.assert... - variavel utilização para validação das informações
+
+AFTER E BEFORE
+
+@BeforeAll - executa o inicio unicamente
+@AfterAll - executa o encerramento unicamente
+@BeforeEach - insere dados no meio do teste, antes e depois de cada teste na classe
+@AfterEach - remove dados do teste, antes e depois de cada teste na classe
+
+ASSUMPTIONS E TESTES CONDICIONAIS
+
+assumptions: presunção/hipotese
+valida algo apenas em determinadas circunstancias
+
+condicionais: condiciona a execucao a algo
+
+TESTANDO EXCEPTIONS
+
+assertThrows
+assertDoesNotThrow
+
+ORDENANDO TESTES
+
+possibilidade de escolher a ordem dos testes
+@TesteMethodOrder(escolha do tipo de ordem desejada)
+@Order(número da ordem) - caso a escolha desejada seja por ordem numerica
+Ordem alfabética
+Random
+@DisplayName(nome do teste desejado)
+
+BOAS PRATICAS
+
+* Busque simplicidade (preocupar-se com nomes e facilidade de leitura)
+* Comece a testar cedo (escrever o codigo de teste o mais proximo possivel do codigo de execução, veja um pouco sobre TDD)
+* Busque padronizaçao (nomenclatura)
+* Testes precisam ser deterministicos (não possuam variaveis que causem resultados diferentes)
+* Economize tempo automatizando (ferramentas de cobertura de codigo e automatize a execucao dos seus testes)
+* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
