@@ -1,0 +1,35 @@
+modelo realciona de dados para representar os dados em tabelas de armazenamento e fornecem acessoa  apontos de dados relacionados entre si
+não relacionado é qualquer banco de dados que não segue o modelo relacional, é tambem conhecida como banco de dados NoSQL
+
+Dynamo DB
+
+banco de dados nosql gerendiado que fornece um desempenho rapido e previsivel com escalabilidade integrada
+utilizado em sistemas onde se busca volume grande de daods com baixa frequencia
+
+*tabelas: coleção de dados
+*items: grupo de atributos identificavel exclusivamente
+*atributos: cada item é composto por 1 ou mais atributos
+*chave primaria: identifica cada item na tabela, n pode ter 2 do mesmo (possui 2 tipos de chaves primarias)
+*partition key: entrada para a função de hash interna
+*partition key + sort key
+*indices secundarios: indices para pesquisa, foco na forma do acesso
+*indice secundario global e local: n é facil de remodelar
+
+tipos de dados
+*tipos escalares
+*documentos
+*tipos de conjuntos
+
+modos de leitura e gravação - quantidade de solicitaçoes por segundo
+*sob demanda
+*provisionado
+
+pensamento fora da caixa
+nao é normalizado, nao existe entidade por tabela, sem joins para pesquisa de dados, tabelas podem receber atributos de forma dinamica
+acces patterns: padroes de acesso definem como os itens serap buscados na tabela - modelagem do db;
+ex: buscar perfil do cliente, pedido do cliente, etc...
+regras de negocio definidas
+dimensionamento
+mantenha o numero de indices no minimo
+design eficiente: tamanho de dados, formato e velocidade (implica no custo e desempenho da aplicação)
+

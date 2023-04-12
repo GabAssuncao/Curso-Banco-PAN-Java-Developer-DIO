@@ -1,0 +1,221 @@
+EXPLORANDO A SQL
+
+SQL Básico, DDL (data definition language) e DML (data manipulation language)
+Explorando SGBDs: MySQL e PostgreSQL
+Serve para qualquer banco de dados convencional
+
+INTRODUÇÃO
+
+surgiu em 1970
+facil de entender e auto explicativo
+
+linguagem para:
+* manipulação de dados;
+* execução de operações.
+profissionais que utilizam: DBAs, Busines Inteligence, Devs e DS.
+
+Objetivo:
+* modificação de dados e estrutura;
+* adicionar, remover ou atualizar linhas;
+* recuperação de um subconjunto de informações do banco de dados (BD);
+* utilizados em sistemas OLTP e OTAP.
+
+sub linguagens:
+* DDL (data definition language)
+	comandos: create, drop, later, insert, update, delete, rename, truncate, merge;
+	define usuários que terão acesso ao BD;
+	cria o esquema, executa statementes ao banco de dados e indexação.
+/* Ex:
+CREATE TABLE person
+-> (person_id SMALLINT UNSIGNED,			//determina a extensão do acesso do usuário
+-> fname VARCHAR(20),					//primeiro nome
+-> lname VARCHAR(20),					//último nome
+-> gender ENUM ('M', 'F'),				//sexo do usuário
+-> birth_date DATE,					//data de nascimento
+-> street VARCHAR(30),					//rua da residência
+-> city VARCHAR(20),					//cidade
+-> state VARCHAR(20),					//estado
+-> country VARCHAR(20),					//país
+-> postal_code VARCHAR(20),				//CEP
+-> CONSTRAINT pk_person PRIMARY KEY (person_id)		//definição do nome para a PK
+-> );
+Query OK, 0 rows affected (0.08 sec)
+*/
+
+* DML (data manipulation language)
+	comandos: insert, update, delete, merge;
+	
+* DCL (data control language)
+	comandos: grant, revoke; (fornece e revoga privilégios)
+
+* DQL (data query language)
+	comandos: select;
+
+Statement - estado o banco de dados (comando de instrução a ser reconhecido pelo banco de dados e retorna um registro dos dados armazenados)
+
+Clásulas SQL - relacionadas ao comando, função que acarreta em uma sequencia de instruções obrigatórias. 
+Ex: select * from name; (o from é obrigatório para puxar as informações de determinada tabela!
+    select now(); (está salvo no datamine da maquina, não precisa incluir o from)
+cláusulas: select, from, where, order by, group by, having
+
+Termos: identificados, operador, constante e expressão
+
+TIPOS DE DADOS
+
+Caracteres:
+* fixo (255 bytes);
+* variável (65.535 bytes);
+* tinytext (255 bytes);
+* text 65.535 (bytes);
+* mediumtext (16.777.215 bytes);
+* longtext (4.294.967.295 caracteres);
+* tinyint
+* smallint
+* mediumint
+* int
+* bigint
+* float
+* double
+* date
+* datetime
+* timestamp
+* year
+* time
+* desc - verifica os atributos de uma tabela - Ex: desc person;
+
+char - obriga a inclusao de uma resposta com quantidade de caracteres fixa
+varchar - inclusao de uma resposta com quantidade de caracteres variável (até quantidade determinada)
+
+Conjunto de caracteres (alfabeto, portugues, ingles) - SHOW CHARACTER SET;
+maxlen > 1 = multibyte char set (conjunto multi byte)
+
+CONSTRAINT
+
+* not null - não permitir que uma variavel fique sem resposta
+* PK & SK - primary key e foregin key
+* default - criar valor padrao para algum atributo
+* check - verificar se o valor inserido corresponde com os valores contidos no dominio
+Ex: CREATE DOMAIN D_NUM AS INTEGER
+    CHECK (D_NUM > 0 AND D_NUM < 21);
+* delete - remover um valor da tabela
+* Primary Key - definida durante a criação da tabela
+* UNIQUE - determina que uma resposta deve ser unico dentro da tabela
+Ex: Dnumber INT PRIMARY KEY,
+    Dname VARCHAR(15) UNIQUE,
+
+VIOLAÇÃO DE CONSTRAINT
+
+* Referential Triggered Action - banco de dados rejeita ação que viole alguma constraint
+* Nomear
+* Check
+CHECK (Dept_create_date <= MGR_start_date); - verificar se a data de inicio é menor que a data de criação do departamento
+
+SQL QUERIES
+
+Comportamento-
+* Multiset - not set
+* Duplicações (redundâncias)
+	melhor prevenir através de constraints
+	pode ser desejada pelo usuário
+	DISTINCT - retorna apenas a primeira ocorrencia de alguma informação, para evitar puxar informações duplicadas
+* Mapping - SELECT <lista de atributos> FROM <tabela> WHERE <condição> - mapear e fazer uma consulta específica no banco de dados
+	Projeção de atributos
+
+Operadores
+
+=, <, <=, >, >=, <> - SQL
++, -, *, / - básicos
+AND, OR, XOR, NOT - booleanos
+TRUE, FALSE - lógicos
+
+DML
+
+Subconjunto do SQL, mais utilizado, comandos: insert, delete, update (interface grafica para inclusao das informações)
+insert into <table> (<list-attributes>) values (<list-values>);
+null & not null
+valores da PK: smallint unsigned, int, biginit
+
+NOMES DE ATRIBUTOS
+
+Select (atributos separados por ,) from (tabela em que está localizado o dados) where (aplicação de condição ex: (department.name = 'Research' and department.Dnumber = employee.Dnumber));
+quando usar renomeação? Quando há ambiguidade e precisa especificar de onde a informação está vindo!
+	* ambiguidade
+	* esclarecimento
+	* diferenciar atributos
+	* nomenclatura diferente
+	Ex: employee as e(fn, mi, ln, ssn,...) <- renomeação
+
+PROBLEMAS
+
+* Pk inexistente 
+* FK inexistente
+* Violação de valores
+* Conversão inválida
+
+MySQL & PostgreSQL
+
+postgresql:
+	* otimizado para aplicações complexas
+	* grande volume de dados / informações críticas
+	* Ex: E-commerce grande/médio porte
+
+mysql:
+	* possui agilidade e versatilidade
+	* operações mais simples
+	* processamento e tempo curto de resposta
+	* Ex: site / fórum / portal
+
+ponderações: precisa de rollback? Enterprise
+		precisa de agilidade, facul utilização e operação simplificada? MySQL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

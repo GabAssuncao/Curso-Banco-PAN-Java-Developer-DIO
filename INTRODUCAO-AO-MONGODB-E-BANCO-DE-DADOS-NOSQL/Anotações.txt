@@ -1,0 +1,152 @@
+NOSQL - not only sql
+
+cada um possui suas proprias caracteristicas, possibilitando a utilização simultanea
+
+Escalabilidade: 
+	* relacionais: escalam de forma vertical, adiciona mais processador, gerando mais demora e disco rigido (exceto mysql cluster)
+	* não relacionais: horizontal, particionando os dados, permitindo maior desempenho na aplicação, gerando escalabilidade infinita (sharding + conhecido)
+
+Schema:
+	* relacionais: estrutura rigida e previamente moldada (+ consistencia e organização)
+	* não relacionais: ausencia de regras de schema, não precisa predefinir os dados do BD, schema-free/schemaless (- garantia da consistencia dos valores e ausencia das linguagens de consulta)
+
+Performance:
+	* relacionais: dependem do sistema de disco
+	* não relacionais: tamanho do cluster e latencia da rede
+
+Transações:
+	* relacionais: transacionais - atomicidade, consistencia, isolamento, durabilidade
+	* não relacionais: basically Available, soft-state, eventually consistent
+
+TIPOS:
+
+* document store: dado totalmente auto-contido e auto-definido
+	permite redundancia e inconsistencias
+	livre de schemas
+
+* key-value store (cache): constituido pela chave unica e valor
+	armazena conjunto de dados simples ou complexos, identificados por identificador exclusivos
+	bom desempenho em aplicação em nuvem
+	capacidade de busca limitada
+	utilizado para cahce, bancos de usuários, de valores, etc
+	não existe definição de schema
+
+
+* wide-column store: armazena informações nas colunas, de forma independente (chave, valor e time stamp)
+	uso maior de leitura do que de escrita
+	Keyspace: agrupamento de familias de colunas
+	Column family: agrupamento de colunas
+	Row key: chave que representa uma familia de colunas
+	Column
+	um exemplo seria a utilização para registro de transações
+
+* graph sotre: estruturas matematicas, compostas entre nos e vertices
+	detecção de fraudes, games, arquivos
+
+MONGODB
+
+Bd de código aberto
+alta performance
+livre de schemas
+utiliza json para armazenamento dos dados
+suporte a indices
+auto-sharding - escala de forma horizontal
+map-reduce - consulta e agregação - para processamento de grande volume de dados
+suporte para GridFS - armazenamento de arquivos
+rica linguaguem de consultas
+
+Document ==> Tupla/Registro (seus dados não podem depender de outros dados)
+Collection ==> Tabela
+Embedding/linking ==> Join (dentro do documento há a sub estrutura dele, informações do usuário e endereço)
+
+grande volume de dados, dados não necessáriamente precisam estar estruturados, 
+
+Quando não utilizar: necessidade de ralacionamento entre informações, propriedades ACID e transações.
+
+Docker
+
+plataforma de codigo aberto, que garante que de forma facil possa criar e administrar aplicações em ambiente separado da maquina a qual será entregue
+docker compose é arquivo que consegue especificar os containers
+
+SCHEMA DESIGN
+
+os dados se relacionam por embedding (documento autocontido) ou referencia (documentos com dependencia de outros documentos ou collections)
+embedding: 
+	* pros: consulta informações em uma unica query, atualiza o registro em uma unica operação
+	* contras: limite de 16mb por documento
+
+referencia:
+	* pros: documentos pequenos, não duplica informação (não é algo ruim), usado quando os dados não sao acessados em todas as consultas
+	* contras: duas ou mais querys ou utilização do $lookup
+
+One-to-one: prefira atributos chave-valor no documento
+One-to-few: prefira embedding
+One-to-many ou Many-to-many: prefira a referência
+
+BOAS PRATICAS
+
+evite documentos muito grandes
+use nomes de campos objetivos e curtos
+analise as suas querys utilizando explain()
+atualize apenas os campos alterados
+evite negações em querys
+listas/arrays dentro dos documentos não podem crescer sem limite
+
+JSON vs BSON
+
+Bson: forma como mongoDB armazena os dados
+serialização codificada em binario de documentos semelhantes a json
+contem extenções que permitem a representação de tipos de dados que nao fazem  parte da especificação json
+
+AGREGAÇÃO
+
+utilizar o resultado da etapa anterior na nova etapa
+* proposito unico - não podem ser aplicadas importações
+	count
+	distinct
+as pipeline mais bascias fornecem "filtros" e "operadores"
+operadores: $group, $addField (adicionar para o 'resultado' um novo campo sem alterar a collection de origem)
+funcçoes: $sum, $avg, $max e $min
+operadores logicos: $and, $or, $not, $nor
+operadores de comparação: >, <, <>, =, <=, >=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
