@@ -1,0 +1,220 @@
+ec2-user:~/environment $ aws dynamodb create-table \
+>     --table-name Music \
+>     --attribute-definitions \
+>         AttributeName=Artist,AttributeType=S \
+>         AttributeName=SongTitle,AttributeType=S \
+>     --key-schema \
+>         AttributeName=Artist,KeyType=HASH \
+>         AttributeName=SongTitle,KeyType=RANGE \
+>     --provisioned-throughput \
+>         ReadCapacityUnits=10,WriteCapacityUnits=5
+
+An error occurred (ResourceInUseException) when calling the CreateTable operation: Table already exists: Music
+ec2-user:~/environment $ aws dynamodb put-item \
+>     --table-name Music \
+>     --item file://itemmusic.json \
+> 
+
+Error parsing parameter '--item': Unable to load paramfile file://itemmusic.json: [Errno 2] No such file or directory: 'itemmusic.json'
+ec2-user:~/environment $ aws dynamodb batch-write-item \
+>     --request-items file://batchmusic.json
+
+Error parsing parameter '--request-items': Unable to load paramfile file://batchmusic.json: [Errno 2] No such file or directory: 'batchmusic.json'
+ec2-user:~/environment $ 
+ec2-user:~/environment $ aws dynamodb query \
+>     --table-name Music \
+>     --key-condition-expression "Artist = :artist" \
+>     --expression-attribute-values  '{":artist":{"S":"Iron Maiden"}}'
+{
+    "Count": 5, 
+    "Items": [
+        {
+            "SongYear": {
+                "S": "2001"
+            }, 
+            "AlbumTitle": {
+                "S": "Brave New World"
+            }, 
+            "SongTitle": {
+                "S": "Blood Brothers"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }, 
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark"
+            }, 
+            "SongTitle": {
+                "S": "Chains of Misery"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }, 
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark Tour"
+            }, 
+            "SongTitle": {
+                "S": "Fear of the Dark"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }, 
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark Live"
+            }, 
+            "SongTitle": {
+                "S": "Wasting Love"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }, 
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark"
+            }, 
+            "SongTitle": {
+                "S": "Weekend Warrior"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }
+    ], 
+    "ScannedCount": 5, 
+    "ConsumedCapacity": null
+}
+ec2-user:~/environment $ aws dynamodb query \
+>     --table-name Music \
+>     --key-condition-expression "Artist = :artist and SongTitle = :title" \
+>     --expression-attribute-values '{":artist":{"S":"Iron Maiden"}}'
+
+An error occurred (ValidationException) when calling the Query operation: Invalid KeyConditionExpression: An expression attribute value used in expression is not defined; attribute value: :title
+ec2-user:~/environment $ aws dynamodb query     --table-name Music     --key-condition-expression "Artist = :artist and SongTitle = :title"     --expression-attribute-values '{":artist":{"S":"Iron Maiden"}}'
+
+An error occurred (ValidationException) when calling the Query operation: Invalid KeyConditionExpression: An expression attribute value used in expression is not defined; attribute value: :title
+ec2-user:~/environment $ aws dynamodb query \
+>     --table-name Music \
+>     --index-name AlbumTitle-index \
+>     --key-condition-expression "AlbumTitle = :name" \
+>     --expression-attribute-values  '{":name":{"S":"Fear of the Dark"}}'
+{
+    "Count": 2, 
+    "Items": [
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark"
+            }, 
+            "SongTitle": {
+                "S": "Weekend Warrior"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }, 
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark"
+            }, 
+            "SongTitle": {
+                "S": "Chains of Misery"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }
+    ], 
+    "ScannedCount": 2, 
+    "ConsumedCapacity": null
+}
+ec2-user:~/environment $ aws dynamodb query \
+>     --table-name Music \
+>     --index-name ArtistAlbumTitle-index \
+>     --key-condition-expression "Artist = :v_artist and AlbumTitle = :v_title" \
+>     --expression-attribute-values  '{":v_artist":{"S":"Iron Maiden"},":v_title":{"S":"Fear of the Dark"} }'
+{
+    "Count": 2, 
+    "Items": [
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark"
+            }, 
+            "SongTitle": {
+                "S": "Chains of Misery"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }, 
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark"
+            }, 
+            "SongTitle": {
+                "S": "Weekend Warrior"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }
+    ], 
+    "ScannedCount": 2, 
+    "ConsumedCapacity": null
+}
+ec2-user:~/environment $ aws dynamodb query \
+>     --table-name Music \
+>     --index-name SongTitleYear-index \
+>     --key-condition-expression "SongTitle = :v_song and SongYear = :v_year" \
+>     --expression-attribute-values  '{":v_song":{"S":"Wasting Love"},":v_year":{"S":"1992"} }'
+{
+    "Count": 1, 
+    "Items": [
+        {
+            "SongYear": {
+                "S": "1992"
+            }, 
+            "AlbumTitle": {
+                "S": "Fear of the Dark Live"
+            }, 
+            "SongTitle": {
+                "S": "Wasting Love"
+            }, 
+            "Artist": {
+                "S": "Iron Maiden"
+            }
+        }
+    ], 
+    "ScannedCount": 1, 
+    "ConsumedCapacity": null
+}
+ec2-user:~/environment $ 
