@@ -1,0 +1,70 @@
+SPRING WEB
+
+API - código programavel que faz a ponte de comuniação entre duas aplicações distintas
+
+REST e RESTful - REST é como um guia de boas praticas e RESTful é a capacidade de determinado sistema em aplicar os principios REST
+	*cliente-servidor - aprimorar a portabilidade entre plataformas de interface do usuario e do servidor
+	*interface unifome - interação entre cliente e servidor, identifique recursos, mensagens autodescritivas
+	*stateless - a interação via API tenha acesso a dados completos e compreensiveis
+	*cache - reduzir tempo media de resposta
+	*camadas - arquitetura menos complexa
+
+Controllers - recurso que disponibiliza as funcionalidades de negocio da aplicação através do protocolo HTTP, da um direcionamento para a funcionalidade existente
+	@RestContoller - resp. por designar o bean de component
+	@RequestMapping - determina qual a URI commum para todos os recursos disponibilizados pelo Controller.
+	@GetMapping - define um metodo como recurso de retorno HTTP
+	@PostMapping
+	@PutMapping
+	@DeleteMapping
+	@RequestBody - converter JSON para o tipo de objeto esperado como parametro no metodo
+	@PathVariable - determina que determinada variavel ira definir o valor passado como parametro do http
+
+Swagger - linguagem de descrição de interface, projetos, instruir documentar e usar serviços da Web
+	* incluir a dependencia do swagger no pom.xml
+	* criar classe de configuração do swagger (@Configuration e @EnableSwagger2)
+	* criar @Bean
+
+Exception Handler - apicação consiga dar direcionamento ao usuario caso não retorne algo esperado
+	@ControllerAdvice - permite controlar os diversos @ExceptionHandler criados
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

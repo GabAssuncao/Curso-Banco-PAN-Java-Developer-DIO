@@ -1,0 +1,144 @@
+SPRING FRAMEWORK
+
+framework open source desenvolvido para a plataforma Java baseado nos padroes de projetos inversao de controle e injecao de dependencia
+estrutura composta por módulos, buscando reduzir a complexidade
+
+Spring Módulos
+
+Data acess
+Web
+Core Container - 
+	beans - objetos montados e gerenciados pelo container
+	core - 
+	context
+	expression language
+	scopes - 
+		stand alone (singleton - unico objeto compartilhado para toda a aplicação, e prototype - criado nova objeto a cada requisição ao container)
+		HTTP requisição (um bean sera cirado para cada requisição HTTP, destruido após sua utilização), seções (um bean criado a cada sessão de usuário) e global (cria um bean enquanto a aplicação estiver no ar)
+
+Spring vs Java EE - antes, usar o spring era um caminho mais simples e facil de evoluir, a versao 5 do java EE tornou mais igualitario
+
+Inversão de Controle 
+
+redirecionamento do fluxo de execução de um cpodigo, retirando parcialmente o controle sobre ele e delegando-o para um container.
+minimizar o acoplamento do codigo
+container faz o gerenciamento e armazenamento dos objetos, quando for utilizar, solicita ao container
+
+Injeção de dependências
+
+padrão de desenvolvimento buscando manter baixo o nivel de acoplamento entre modulos de um sistema
+injetar expecificações para a interface
+
+Autowired
+
+anotação onde deverá ocorrer uma injeção automatica de dependencia
+* byName - nome do bena
+* byType - tipo da classe ou instancia
+* byConstructor - usa o construtor para injetar a dependencia
+
+
+SPRINGBOOT FREMEWORK
+
+foca na configuração automatica
+prover recursos repetitivos, onde não é necessário realizar as configurações padrões, apenas inserção dos dados
+configurações ja definidas
+STARTERS- descritor de dependencia
+	* coesão, versos compatíveis, otimização do tempo, configuração simples, foco no negócio
+	* mais utilizados: data-jpa, data-mongodb, web, web-services, batch, teste, openfeign, actuator
+
+!!Retirada da necessidade do commando "new" na chamada de classes:
+
+* na classe inicializador incluir "implements CommandLineRunner"
+* criar um @Override para o metodo executavel
+* inclusão de @Component na classe inicializadora e no objeto a ser utilizado
+* @Autowired para sobescrever a forma de chama do objeto em questão, seguido da chamada do objeto
+//
+EX:
+@Component
+public class Calculadora {
+    public int somar(int numero1, int numero2) {
+        return numero1+numero2;
+    }
+}
+
+@Component
+public class MyApp implements CommandLineRunner {
+    @Autowired
+    private Calculadora calculadora;
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("o resultado é " + calculadora.somar(2, 7));
+    }    
+}
+//
+
+@Component -> injetar em qualquer ecosistema
+@Bean - ao injetar lembra que há uma CommanLineRunner - run injeta outro componente
+
+caso o objeto a ser utilizado seja da biblioteca, necessário criar uma classe individual para ele, com o comando @Bean na parte superior
+
+@Scope - definição da spring para o tipo prototype!
+
+PROPERTIES VALUE
+
+nem todas as atribuições usadas na aplicação são iguais, precisam estar explicitas de forma declarativa no codigo fonte, podem estar no application.properties
+@Value("${nome}") - puxar a informação de determinada expressão que contem no application.properties (armazenamento interno)
+@Configuration
+@ConfigurationProperties(prefix = "remetente") depende do application.properties
+@Scope - definir o tempo de vide de um objeto gerenciado pelo container
+
+JAVA PERSISTENCE API
+
+ORM - mapeamento de objeto relacional, recurso para aproximar o paradigma da orientação objeto ao contexto de banco de dados relacional
+	uso através de mapeamento de um objeto para uma tabela por uma biblioteca ou framwork
+
+JPA - especificação baseada em interfaces que atraves de um framework realiza operações de persistencia de objetos em java.
+	implementações: hibernate, top link, eclipse link, open jpa
+
+Mapeamento - classe deve ter: identificação, definição, relacionamento, herança, persistencia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

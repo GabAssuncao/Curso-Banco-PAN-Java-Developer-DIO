@@ -1,0 +1,239 @@
+HTTP (HyperText Transfer Protocol)
+
+protocolo de comunicação definido pelos RFCs 1945 e 2116
+browser inplemento o cliente http
+
+* cliente envia mensagens de request
+* servidor responde mensagem utilizando protocolo TCP (controle dos pacotes enviados), não guarda o estado do cliente
+
+Arquitetura client-server
+
+* Tipos de mensagens HTTP: request & response
+
+GET: https://www.amazon.com.br
+Host: amazon.com
+Connection: close
+User-agent: Mozila/5.0
+
+quando o servidor recebe a mensagens, ele procura no armazenamento e encaminha um resposta de envio do solicitado
+ 
+POST - submissao de conteudo ao servidor
+POST: https://www.amazon.com.br
+Host: amazon.com
+Connection: close
+User-agent: Mozila/5.0
+
+servidor faz a atualização no bd com as informações passadas e responde se conseguiu fazer o update
+
+HTTPS body:
+	* XML (serialização, comunicação, metadados, mais complexo)
+	* JSON (lightweight, independente de linguagem de programação, simples)
+tags, sucinto, legibilidade, utilização de arrays
+
+armazenamento -> transmissão -> reconstrução
+definição do tipo de body através do content-type
+
+* persistente - mantem a conexao ativa
+* nao persistente - encerra conexao assim que o dado é retornado
+
+podem ser feitas até 6 requisiçoes http ao mesmo tempo
+
+HOL - uma vez que faz a requisicao n encerra ate receber a resposta
+repeticao de dados
+caching
+foco: css/js e gzip
+
+HTTP REQUEST
+
+serve para buscar e enviar informações (GEt e POST)
+
+get (pega informações), 
+head (get sem resposta), 
+post (submete informação), 
+put (substitui parcialmente os dados), 
+delete (deleta), trace (diagnostico de rede), 
+option (retorna opções de comunicacao), 
+connect (insere tunelamento entre cliente e recurso, 
+patch (modificação parcial RG 5789).
+
+metodos seguros/idempotentes - nao modificam o estado do servidor por ordem do cliente (get, head, option)
+
+HTTP RESPONSE
+
+versao protocolo, status code, status da mensagem
+200ok (request bem sucedida)
+301 moved permanently (informação realocada)
+400 bad request
+404 not found
+505 http version not suported
+
+information (100 - 199)
+successful (200 - 299)
+redirection (300 - 399)
+client error (400 - 499)
+server erros (500 - 599)
+
+WebDav (tenta recuperar as propriedades dentro do recurso do servidor e desbloqueia):
+
+102 - processing
+207 - multi-status
+208 - already reported
+422 - unprocessable entity
+423 - locked
+424 - failed dependancy
+
+add, delet, retrieve information
+link pages
+criação conjunta de docs
+copy e move
+lock: documento editado -1
+
+corpo composto por: conexao encerrada, data, servidor, content-type
+
+PROTOCOLO HTTP
+
+cookies - pedaços de dados para rastrear as informações do cliente, criados pelo servidor para persistir os dados (track)
+	ficam no header file
+	request -> acesso ao backend -> se id exixtir atualiza info ou seta id no cookie file
+	* sessao - deletados quando a sessao encerra
+	* persistentes - mantidos no computador (login ativo, info de sites, carrinho de ecommerce)
+	
+cookies e privacidade
+	informacoes relacionadas ao usuario armazenadas, podem ser invasivos, todo site com cookies precisam de consentimento após LGPD
+	caso sofra ataque de hacking, podem utilizar os dados do seu cookie
+
+web caching
+	proxy server - intermediario que verifica as informaçoes solicitadas dentro do servidor, atualiza se estiverem diferentes ou informação contida for antiga
+	pode ser caracterizado tanto como servidor quanto cliente, dependendo da etapa da relação
+	redução do trafego e tempo de resposta
+	
+ATUALIZAÇÕES DO PROTOCOLO 2.0 HTTP
+
+HOL - conexao principal persistente entre cliente e servidor, para envio das requisiçoes de maneira independente (strems destintos)
+	priorização de recursos utilizando pesos, load de objetos distintos com pesos de prioridade
+reutilizaçao do header - uso do pacote que ja foi usado para referenciar outro streaming
+push - envia de uma só vez tudo que o cliente precisa sem o aguardo de requisicao (pedir uma pagina web e o servidor enviar ela toda)
+	deve ser configura no cliente também, ele pode nao ter suporte para push
+unica conexao persistente
+compressao de header
+HTTPS por padrao - TLS (ultima versao do SSL)
+negociaçao do handshake - no conexao com o servidor o cliente responde consegue suportar ou nao
+
+contras: push configurado de maneira incorreta = problemas serios
+	mix entre as versoes = lentidao
+	load balancer suporta apenas 1.1
+
+SERVIDORES/SISTEMAS
+
+Apache (1995 - contribuiu para WWW - open source e gratuito - mantido pela comunidade)
+	modular, utiliza apenas o que precisa, dinamico e carregavel
+	multiple request
+	suporta ipv6
+	windows e linux
+	...
+
+XAMPP (pacote/ambiente - apache server - maria DB - interpretadores script PHP/Perl...)
+	teste e desenvolimento - sem acesso à internet
+	parametros de segurança desabilitados
+
+NGINX (2004 - proxy reverso - load balancer - mail proxy - HTTP cache)
+	+10mil conexoes
+	suporte a gRPC (v 1.13.10)
+	...
+
+HTTPS - o que muda no protocolo?
+
+segurança da informação - 
+	criptografia por chave - mascarar arquivo de dados através de uma cifra para quem não conhece o mapeamento utilizado
+		* assimetrica: privada (assinatura - criptografia) e publica (verificação de autenticidade)
+		* simetrica: mesma chave para criptografar e voltar, ambas as partes precisam ter conhecimento previo da chave
+		cifra de cesar, substituição da letra pela k-esima do alfabeto - rotatividade do alfabeto (Ex: k=3 letra B vira E seguindo o alfabeto)
+		cifra de fluxo, sequencia de bits pseu aleatorio, mapeando 1 para 1
+		cifra de bloco, blocos de bits e mapea de forma a permutar a ordem por outro valor (Ex: k=3 a cada 3 bits permuta por determinado padrao)
+		
+	certificado digital - certificacao de chave publica
+		IPSec - SSL - TSL
+		identificação da pessoa verdadeira atraves da chave de autenticidade da pessoa
+		Entidade certificadora garante que é aquela pessoa pela chave e emite certificados
+			Padroes: IETF recomendação ITUX.509 / RFC 1422
+		
+PROTOCOLO SSL - Secure Socket Layer
+
+protocolo de segurança de conexao, confidencialidade, integridade, ...
+projege o usuario contra usuarios maliciosos
+	* listening - observa as informações para uso posterior
+	* ataque ativo - modifica informação para se beneficiar
+
+Operação do SSL -
+	* handshake - conexao TCP, cliente recebe resposta, confirma conexao, verificação de autenticidade pela certificação, envio da master secret key para descriptografar as infos (respectiva sessao criada)
+	* Master secret Key - session encryptation key criada para a sessao, verificação ataves da MA
+
+443 - porta de verificação dos certificados
+
+LGDP - 2018, vigor em 2020 - define proteção geral e tratamento para dados de identificação e dados sensiveis, concentimento - agente (ANPD)
+
+WEB SOCKET
+
+trata inudação de requisições de dados, para mante-los disponiveis aos usuarios
+web app - conexoes subjacentes, alto overhead, mapeamento vis script
+cria 1 conexao bidimensional entre cliente e servidor
+websocket roda encapsulado no http - api usa a infraestrutura existente no http (upgrade)
+portas 80 e 443
+handshake de 2 vias, tornando mais rapido a comunicação
+definição - fornece comunicacao cliente servidor, executando codigo nao confiavel em um ambiente controle para o host que escolheu essa aplicação
+apenas aceita json
+
+loadbalancer - intermediario que pode fazer distribuição de carga, multiplexação (recebe requisições e multiplexa em uma mesma conexao com o servidor)
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

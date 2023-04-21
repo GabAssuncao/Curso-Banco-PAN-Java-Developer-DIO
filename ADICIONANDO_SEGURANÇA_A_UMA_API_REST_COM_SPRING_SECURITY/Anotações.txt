@@ -1,0 +1,58 @@
+SPRING SECURITY
+
+Grupo de filtros de servlet que ajudam você a adicionar autenticação e autorização ao seu apicativo web.
+
+Default (Padrao) - possui usuario chamado user e gera uma senha temporaria aleatoria toda vez que roda a app
+
+Autenticação Simples - define usuarios na camada de segurança através do application.properties, onde verifica se há alguma configuração de segurança
+	spring.security.user.name=gabryel
+	spring.security.user.password=1234
+	spring.security.user.roles=USER
+
+Geracao de usuarios em memoria - criar mais de um usuario (classe WebSecurityConfig), com acesso liberado dependendo do cargo de cada um
+
+Configure Adapter - definir o perfil de usuario que acessa determinada rota da sessão e as ações que podem tomar na app
+
+Auth Database - armazenamento dos perfis e usuarios em um database para maior segurança e não se fazer necessario novas definições toda vez que for rodar a app
+	definir de forma explicita o banco de dados disponivel na aplicacao 
+
+JWT - JSON Web Token - padrao da internet para criacao de dados com assinatura e criptografia, cujo conteudo é um JSON
+	payload, estrutura do corpo contendo informações de autenticação
+	assinatura - para garantir a autenticidade de todo o token que esta sendo trafegado
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
