@@ -17,6 +17,8 @@ public class FabricaDeCarros {
         System.out.println("Percentual de impostos: ");
 	    int percentualImpostos = scan.nextInt(); 
 
+        scan.close();
+
         int custoConsumidor;
         int valorDistribuidor;
         int valorImpostos;

@@ -11,6 +11,8 @@ public class Dragao {
         System.out.println("Daenerys: Quantos seres vivos gostaria de escanear? ");
         int casos = scan.nextInt();
 
+        scan.close();
+
         for (int i = 1; i <= casos; i++) {
 
             System.out.println("Poder de luta escaneado para o ser vivo " + i + ":");

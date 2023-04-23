@@ -12,6 +12,8 @@ public class PositivosMedia {
         int count = 0;
         double soma = 0;
         double numero;
+
+        scan.close();
         
         for (int i = 1; i <= 6; i++) {
         	

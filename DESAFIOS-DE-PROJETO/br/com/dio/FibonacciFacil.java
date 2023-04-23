@@ -15,6 +15,8 @@ public class FibonacciFacil {
         int anterior = 0;
         int atual =  1;
 
+        scan.close();
+
         if (numero < 0 || numero >= 46) {
 
             System.out.println("Número inválido");

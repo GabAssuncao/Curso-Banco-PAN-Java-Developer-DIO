@@ -10,10 +10,11 @@ public class SomaTermos {
         Scanner scan = new Scanner(System.in);
 
         System.out.println("Digite a quantidade de termos: ");
-        double h = 1;
         int n = scan.nextInt();
         double numero = 0;
         double soma = 0;
+
+        scan.close();
         
         for (double i = 1; i <= n; i++) {
             
