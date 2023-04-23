@@ -1,0 +1,97 @@
+BANCO DE DADOS
+
+Persistir dados de alguma maneira, através de arquivos, blocos, etc, para armazenar os dados
+	* Persistencia de dados
+	* Estruturação de dados
+	* Retrato fiel da realidade (contexto do mundo real)
+Utilizando mecanismos de controle de acesso, 
+Aspectos dos dados - regras para corretude e acesso controlado
+Fatores de influencia - volume, velocidade e heterogeniedade
+Dados "espalhados" são organizados atraves de uma classificação criterioza (denominada "Mini-Mundo"), reconhece apenas o que contem dentro dele
+Controle de acesso concorrente ou bloqueio e autorização de acesso
+Dados, regras e operações são a essencia dos sistemas de informação
+Padronização com SQL, isolamento dos dados, consistencia de estado, regras de integridade, mecanismos de acesso (estrutura, gerenciamento de memoria, processamento)
+
+Modelo Relacional = teoria dos conjuntos, tabelas bidimensionais, relação entre conjuntos (objetos), composto por linhas, colunas e tabelas
+	* Simplicidade na consulta;
+	* Vasta utilização;
+	* Dados estruturados;
+	* Consistencia dos dados (Ex: depósito em conta).
+
+COMPUTAÇÃO EM NUVEM
+
+servidores, dados, aplicações, servidores em nuvem.
+MODELO - virtualização, pay-per-use, recursos sob demanda, deslocamento da infra local, escalabilidade, sistemas distribuidos.
+Data center, modelo de serviços, camada conceitual
+Aspectos de computação em nuvem: recursos infinitos, baixo custo inicial, escalabilidade, transparência/abstração, pagar pelo que usa
+Arquitetura: prestador de infraestrutura (Responsáveis por manter os serviços de armazenamento), prestador de serviço (desenvolvem e disponibilizam os serviços), usuário da nuvem
+Camadas - aplicação, plataforma e infraestrutura
+Serviços: 
+	* SaaS (software as service, instancias e app completas), 
+	* PaaS (Platform as service, prove a aplicação),
+	* IaaS (Infrastructure as a service).
+Publica (aberta, varios utilizam), privada (associada e uma empresa) e hibrida
+
+AWS - Amazon Web Service
+
+segurança (ambos os lados são responsaveis), performance, confiabilidade, excelencia operacional, otimização de recursos
+
+RDS - relational database servise
+
+bds em nuvem, automatiza operações, compativel com bds tradicionais, replicas
+Modo de uso por: interface, linha de comando ou API
+Snapshots = backcups de instancia
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
